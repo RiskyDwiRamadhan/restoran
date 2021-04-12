@@ -20,3 +20,4 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/menu', [HomeController::class, 'menu']);
+Route::get('/meja', [HomeController::class, 'meja']);

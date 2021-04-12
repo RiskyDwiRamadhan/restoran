@@ -23,7 +23,7 @@
                 <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url('/menu')}}" style="padding: 10px 20px;">Menu</a>
             </li>
             <li class="u-nav-item">
-                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Meja.html" style="padding: 10px 20px;">Meja</a>
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url('/meja')}}" style="padding: 10px 20px;">Meja</a>
             </li>
             <li class="u-nav-item">
                 <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Transaksi.html" style="padding: 10px 20px;">Transaksi</a>
