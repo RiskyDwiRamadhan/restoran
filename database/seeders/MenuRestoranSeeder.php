@@ -20,14 +20,14 @@ class MenuRestoranSeeder extends Seeder
             'harga_menu' => '15000',
             'jenis_menu' => 'makanan',
             'deskripsi' => 'Sate lilit adalah sate khas Bali yang terbuat dari ayam, udang, dan dicampurkan dengan bumbu yang kaya rempah-rempah. Serta menggunakan sereh untuk tusuk satenya.',
-            'image' => '/template/images/satelilit.jpg'
+            'image' => '/template/images/sate lilit.jpg'
         ],[
             'id_menu' => '2',
             'nama_menu' =>'Sate Tempe',
             'harga_menu' => '15000',
             'jenis_menu' => 'makanan',
             'deskripsi' => 'Sate tempe merupakan makanan berbahan dasar tempe yang terbuat dari kedelai fermentasi. Diolah seperti pembuatan sate.',
-            'image' => '/template/images/satetempe.jpg'
+            'image' => '/template/images/sate tempe.jpg'
         ],[
             'id_menu' => '3',
             'nama_menu' =>'Es Kelapa Muda',
