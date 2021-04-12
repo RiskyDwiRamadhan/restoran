@@ -13,8 +13,13 @@ class CreateMenuRestoransTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_restorans', function (Blueprint $table) {
-            $table->id();
+        Schema::create('menu', function (Blueprint $table) {
+            $table->String('id_menu', 10)->primary();
+            $table->String('nama_menu', 255)->nullable();
+            $table->Integer('harga_menu')->nullable();
+            $table->String('jenis_menu', 255)->nullable();
+            $table->String('deskripsi', 255)->nullable();
+            $table->String('image', 255)->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateMenuRestoransTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_restorans');
+        Schema::dropIfExists('menu');
     }
 }

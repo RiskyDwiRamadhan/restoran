@@ -14,26 +14,30 @@
   </g></svg></span>
         </div>
       </section>
+
       <section class="u-align-center u-clearfix u-palette-5-dark-3 u-section-2" id="sec-913c">
         <div class="u-clearfix u-sheet u-sheet-1">
           <h1 class="u-custom-font u-font-playfair-display u-text u-text-1">Menu<br>Makanan
           </h1>
           <h5 class="u-text u-text-2">Makanan khas Indonesia dengan bahan-bahan pilihan asli Indonesia</h5>
           <div class="u-list u-repeater u-list-1">
+            
+          {{-- @foreach ($data as $F) --}}
             <div class="u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-container-style u-list-item u-repeater-item u-video-cover u-list-item-1">
               <div class="u-container-layout u-similar-container u-container-layout-1">
                 <img src="template/images/sate lilit.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="640" data-image-height="528">
-                <div class="u-align-center u-container-style u-group u-opacity u-opacity-85 u-palette-3-base u-group-1">
+                {{-- <div class="u-align-center u-container-style u-group u-opacity u-opacity-85 u-palette-3-base u-group-1">
                   <div class="u-container-layout u-container-layout-2">
-                    <h2 class="u-align-center u-custom-font u-text u-text-3">Sate Lilit</h2>
+                    <h2 class="u-align-center u-custom-font u-text u-text-3">{{$F->id_favorite}}</h2>
                   </div>
-                </div>
+                </div> --}}
                 <p class="u-align-center-lg u-text u-text-4">Ayam, udang, rempah-rempah, dan sereh ditambah dengan sambal matah yang segar.</p>
                 <h3 class="u-align-center-lg u-custom-font u-text u-text-5">Rp 15000</h3>
                 <a href="https://nicepage.com/c/pricing-html-templates" class="u-btn u-button-style u-palette-5-dark-2 u-btn-1">Tambah</a>
               </div>
             </div>
-            <div class="u-align-center-lg u-align-center-md u-align-center-xl u-align-center-xs u-container-style u-list-item u-repeater-item">
+          {{-- @endforeach --}}
+            {{-- <div class="u-align-center-lg u-align-center-md u-align-center-xl u-align-center-xs u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-3">
                 <img src="template/images/sate tempe.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-2" data-image-width="412" data-image-height="644">
                 <div class="u-align-center u-container-style u-group u-opacity u-opacity-85 u-palette-2-base u-group-2">
@@ -45,10 +49,11 @@
                 <h3 class="u-align-center-sm u-custom-font u-text u-text-8">Rp 15000</h3>
                 <a href="https://nicepage.com/k/membership-website-templates" class="u-btn u-button-style u-palette-5-dark-2 u-btn-2">Tambah</a>
               </div>
-            </div>
+            </div> --}}
           </div>
         </div>
       </section>
+
       <section class="u-align-center u-clearfix u-grey-10 u-section-3" id="carousel_c1c7">
         <div class="u-clearfix u-sheet u-sheet-1">
           <h1 class="u-custom-font u-font-oswald u-text u-text-palette-3-base u-text-1">Menu Makanan</h1>

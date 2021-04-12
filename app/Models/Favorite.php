@@ -19,7 +19,7 @@ class Favorite extends Model
    protected $fillable = [
       'id_favorite',
       'id_menu',
-      'tangal_favorite',
+      'tangal_favorite'
    ];
    
    public function menu()
