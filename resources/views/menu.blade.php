@@ -28,7 +28,7 @@
                 <img src="template/images/sate lilit.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="640" data-image-height="528">
                 <div class="u-align-center u-container-style u-group u-opacity u-opacity-85 u-palette-3-base u-group-1">
                   <div class="u-container-layout u-container-layout-2">
-                    <h2 class="u-align-center u-custom-font u-text u-text-3">{{$F->id_favorite}}</h2>
+                    <h2 class="u-align-center u-custom-font u-text u-text-3">{{$F->id_menu}}</h2>
                   </div>
                 </div>
                 <p class="u-align-center-lg u-text u-text-4">Ayam, udang, rempah-rempah, dan sereh ditambah dengan sambal matah yang segar.</p>
@@ -37,12 +37,14 @@
               </div>
             </div>
           @endforeach --}}
+          
+          @foreach ($data->menu as $F)
             <div class="u-align-center-lg u-align-center-md u-align-center-xl u-align-center-xs u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-3">
                 <img src="template/images/sate tempe.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-2" data-image-width="412" data-image-height="644">
                 <div class="u-align-center u-container-style u-group u-opacity u-opacity-85 u-palette-2-base u-group-2">
                   <div class="u-container-layout u-container-layout-4">
-                    <h2 class="u-align-center u-custom-font u-text u-text-6">Sate Tempe</h2>
+                    <h2 class="u-align-center u-custom-font u-text u-text-6">{{$F->nama_menu}}</h2>
                   </div>
                 </div>
                 <p class="u-align-center-sm u-text u-text-7">Tempe, kecap, bawang merah, dan bawang goreng</p>
@@ -50,7 +52,8 @@
                 <a href="https://nicepage.com/k/membership-website-templates" class="u-btn u-button-style u-palette-5-dark-2 u-btn-2">Tambah</a>
               </div>
             </div>
-          </div>
+          @endforeach
+          </div> 
         </div>
       </section>
 
