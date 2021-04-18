@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $data = Favorite::with('menu');
+        $data = Favorite::with('menu')->get();
         // $menu = Menu::all();
         // $data = Favorite::all()->with('menu');
         return view('home',compact('data'));

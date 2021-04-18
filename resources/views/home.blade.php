@@ -32,8 +32,8 @@
                   <div class="u-container-layout u-container-layout-2">
                     <h6 class="u-align-center u-text u-text-1">FAVORITE<br>DRINK
                     </h6>
-                    <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-2">Es Kelapa Muda</h3>
-                    <p class="u-align-center u-text u-text-3">Es kelapa muda adalah minuman yang menyegarkan, terbuat dari air kelapa muda dan diberikan topping daging buah kelapa yang lembut.</p>
+                    <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-2">{{$data[2]->menu->nama_menu}}</h3>
+                    <p class="u-align-center u-text u-text-3">{{$data[2]->menu->deskripsi}}</p>
                   </div>
                 </div>
                 <div class="u-container-style u-image u-layout-cell u-right-cell u-size-20 u-image-2" data-image-width="412" data-image-height="644">
@@ -47,8 +47,8 @@
                   <div class="u-container-layout u-container-layout-4">
                     <h6 class="u-align-center u-text u-text-4">Favorite<br>Food
                     </h6>
-                    <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-5">Sate Lilit</h3>
-                    <p class="u-align-center u-text u-text-6">Sate lilit adalah sate khas Bali yang terbuat dari ayam, udang, dan dicampurkan dengan bumbu yang kaya rempah-rempah. Serta menggunakan sereh untuk tusuk satenya.</p>
+                    <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-5">{{$data[0]->menu->nama_menu}}</h3>
+                    <p class="u-align-center u-text u-text-6">{{$data[0]->menu->deskripsi}}</p>
                   </div>
                 </div>
                 <div class="u-container-style u-image u-layout-cell u-size-20 u-image-3" data-image-width="280" data-image-height="229">
@@ -57,8 +57,8 @@
                 <div class="u-container-style u-layout-cell u-right-cell u-size-20 u-layout-cell-6">
                   <div class="u-container-layout u-container-layout-6">
                     <h6 class="u-align-center u-text u-text-7">Favorite food</h6>
-                    <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-8">Sate Tempe</h3>
-                    <p class="u-align-center u-text u-text-9">Sate tempe merupakan makanan berbahan dasar tempe yang terbuat dari kedelai fermentasi. Diolah seperti pembuatan sate.</p>
+                    <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-8">{{$data[1]->menu->nama_menu}}</h3>
+                    <p class="u-align-center u-text u-text-9">{{$data[1]->menu->deskripsi}}</p>
                   </div>
                 </div>
               </div>
