@@ -26,6 +26,6 @@ class Menu extends Model
 
     public function favorite()
     {
-        return $this->hashMany(Favorite::class);
+        return $this->hashMany(Favorite::class, 'id_menu');
     }
 }

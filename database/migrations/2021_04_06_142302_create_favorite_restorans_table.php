@@ -16,7 +16,7 @@ class CreateFavoriteRestoransTable extends Migration
         Schema::create('favorite', function (Blueprint $table) {
             $table->String('id_favorite', 10)->primary();
             $table->String('id_menu', 10)->nullable();
-            $table->foreign('id_menu')->references('id_menu')->on('menu');
+            $table->foreign('id_menu')->references('id_menu')->on('menu')->nullable();
             $table->Date('tangal_favorite')->nullable();
             $table->timestamps();
         });
