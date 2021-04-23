@@ -70,6 +70,7 @@
             <div class="u-expanded-width-xs u-list u-repeater u-list-1">
 
                 @foreach ($makanan as $M)
+                <form action="#" method="post" class="tm-contact-form">
                     <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
                         <div
                             class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
@@ -81,13 +82,18 @@
                                     <h3 class="u-custom-font u-font-oswald u-text u-text-3">{{ $M->nama_menu }}</h3>
                                     <p class="u-text u-text-4">{{ $M->deskripsi }}</p>
                                     <h6 class="u-text u-text-palette-3-base u-text-5">Rp {{ $M->harga_menu }}</h6>
+                                    
                                     <a href="https://nicepage.com/k/quiz-html-templates"
                                         class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-1">Tambah</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </form>
                 @endforeach
+                <div class="d-flex">
+                    {{ $makanan->links() }}
+                </div>
             </div>
     </section>
 
@@ -127,24 +133,30 @@
             <div class="u-expanded-width-xs u-list u-repeater u-list-1">
 
                 @foreach ($minuman as $M)
-                    <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
-                        <div
-                            class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-                            <img alt="" class="u-expanded-width-xs u-image u-image-default u-image-1"
-                                src="{{ $M->image }}" data-image-width="680" data-image-height="1019">
+                    <form action="#" method="post" class="tm-contact-form">
+                        <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
                             <div
-                                class="u-align-left-xs u-container-style u-expanded-width-xs u-group u-video-cover u-group-1">
-                                <div class="u-container-layout u-container-layout-2">
-                                    <h3 class="u-custom-font u-font-oswald u-text u-text-3">{{ $M->nama_menu }}</h3>
-                                    <p class="u-text u-text-4">{{ $M->deskripsi }}</p>
-                                    <h6 class="u-text u-text-palette-3-base u-text-5">Rp {{ $M->harga_menu }}</h6>
-                                    <a href="https://nicepage.com/k/quiz-html-templates"
-                                        class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-1">Tambah</a>
+                                class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
+                                <img alt="" class="u-expanded-width-xs u-image u-image-default u-image-1"
+                                    src="{{ $M->image }}" data-image-width="680" data-image-height="1019">
+                                <div
+                                    class="u-align-left-xs u-container-style u-expanded-width-xs u-group u-video-cover u-group-1">
+                                    <div class="u-container-layout u-container-layout-2">
+                                        <h3 class="u-custom-font u-font-oswald u-text u-text-3">{{ $M->nama_menu }}</h3>
+                                        <p class="u-text u-text-4">{{ $M->deskripsi }}</p>
+                                        <h6 class="u-text u-text-palette-3-base u-text-5">Rp {{ $M->harga_menu }}</h6>
+                                        
+                                        <a href="{{ route('detailorder.show', $M->id_menu) }}"
+                                            class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-1">Tambah</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 @endforeach
+                <div class="d-flex">
+                    {{ $minuman->links() }}
+                </div>
 
             </div>
         </div>
