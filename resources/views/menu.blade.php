@@ -28,29 +28,6 @@
 
     <section class="u-align-center u-clearfix u-palette-5-dark-3 u-section-2" id="sec-913c">
         <div class="u-clearfix u-sheet u-sheet-1">
-<<<<<<< HEAD
-          <h1 class="u-custom-font u-font-playfair-display u-text u-text-1">Menu<br>Makanan
-          </h1>
-          <h5 class="u-text u-text-2">Makanan khas Indonesia dengan bahan-bahan pilihan asli Indonesia</h5>
-          <div class="u-list u-repeater u-list-1">
-                      
-          {{-- @foreach ($data->menu as $F)
-            <div class="u-align-center-lg u-align-center-md u-align-center-xl u-align-center-xs u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-3">
-                <img src="template/images/sate tempe.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-2" data-image-width="412" data-image-height="644">
-                <div class="u-align-center u-container-style u-group u-opacity u-opacity-85 u-palette-2-base u-group-2">
-                  <div class="u-container-layout u-container-layout-4">
-                    <h2 class="u-align-center u-custom-font u-text u-text-6">{{$F->nama_menu}}</h2>
-                  </div>
-                </div>
-                <p class="u-align-center-sm u-text u-text-7">Tempe, kecap, bawang merah, dan bawang goreng</p>
-                <h3 class="u-align-center-sm u-custom-font u-text u-text-8">Rp 15000</h3>
-                <a href="https://nicepage.com/k/membership-website-templates" class="u-btn u-button-style u-palette-5-dark-2 u-btn-2">Tambah</a>
-              </div>
-            </div>
-          @endforeach --}}
-          </div> 
-=======
             <h1 class="u-custom-font u-font-playfair-display u-text u-text-1">Menu<br>Makanan
             </h1>
             <h5 class="u-text u-text-2">Makanan khas Indonesia dengan bahan-bahan pilihan asli Indonesia</h5>
@@ -81,7 +58,6 @@
                     </div>
                 @endfor
             </div>
->>>>>>> 2a12ec33985c195e0d04b8e57cf582b19bb0dda7
         </div>
     </section>
 
