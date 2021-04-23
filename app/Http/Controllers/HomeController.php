@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $data = Favorite::with('menu');
+        $data = Favorite::with('menu')->get();
         // $menu = Menu::all();
         // $data = Favorite::all()->with('menu');
         return view('home',compact('data'));
@@ -18,7 +18,11 @@ class HomeController extends Controller
     }
 
     public function menu(){
+<<<<<<< HEAD
         $data = Favorite::with('menu')->paginate(2);
+=======
+        $data = Favorite::with('menu')->get();
+>>>>>>> 2a12ec33985c195e0d04b8e57cf582b19bb0dda7
         $makanan = Menu::where('jenis_menu', 'like', "%"."makanan"."%")->paginate(4);
         $minuman = Menu::where('jenis_menu', 'like', "%"."minuman"."%")->paginate(4);
         return view('menu',compact('makanan', 'minuman', 'data'));
