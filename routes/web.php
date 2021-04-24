@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\DetailOrderController;
-use App\Http\Controllers\OrderSementara;
+use App\Http\Controllers\OrderSementaraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +21,9 @@ use App\Http\Controllers\OrderSementara;
 //     return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/menu', [HomeController::class, 'menu']);
-Route::get('/meja', [HomeController::class, 'meja']);
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/menu', [HomeController::class, 'menu'])->name('home.menu');
+Route::get('/meja', [HomeController::class, 'meja'])->name('home.meja');
 Route::resource('order', OrderController::class);
 Route::resource('detailorder', DetailOrderController::class);
-Route::resource('ordersementara', DetailOrderController::class);
+Route::resource('ordersementara', OrderSementaraController::class);

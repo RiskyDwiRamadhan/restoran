@@ -43,11 +43,12 @@ class OrderSementaraController extends Controller
         $menu = Menu::where('id_menu', 'like', "%".$request->id_menu."%")->first();
 
         OrderSementara::create([
-            'id_sorder' => 'SO'.date('Ymd').rand(1,99),
+            'id_sorder' => 'SO'.date('Ymd').rand(01,999),
             'id_menu' => $menu->id_menu,
             'qty' => $request->get('qty'),
             'harga' =>$menu->harga_menu*$request->get('qty'),
         ]);
+        return redirect()->route('home.menu');
     }
 
     /**
@@ -58,7 +59,8 @@ class OrderSementaraController extends Controller
      */
     public function show($id)
     {
-        //
+        $menu = Menu::where('id_menu', 'like', "%".$id."%")->first();
+        return view('DetailOrder.detailorder', compact('menu'));
     }
 
     /**

@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\DetailOrder;
 use App\Models\Order;
 use App\Models\Menu;
-use Illuminate\Http\Request;
 use App\Models\OrderSementara;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class DetailOrderController extends Controller
@@ -16,9 +16,16 @@ class DetailOrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if($request->has('search')){ // Pemilihan jika ingin melakukan pencarian nama
+            // $detailorder = OrderSementara::where('nama', 'like', "%".$request->search."%")->with('kelas')->paginate(5);
+        } else { // Pemilihan jika tidak melakukan pencarian nama
+            //fungsi eloquent menampilkan data menggunakan pagination
+            $detailorder = OrderSementara::paginate(5); // Pagination menampilkan 5 data
+        }
+
+        return view('Order.order', compact('detailorder'));
     }
 
     /**
@@ -39,22 +46,14 @@ class DetailOrderController extends Controller
      */
     public function store(Request $request)
     {        
-        $request->validate([
-            'qty' => 'required'
-        ]);
+        // $request->validate([
+        //     'qty' => 'required'
+        // ]);
         
-        $menu = Menu::where('id_menu', 'like', "%".$request->id_menu."%")->first();
-
-        OrderSementara::create([
-            'id_sorder' => 'SO'.date('Ymd').rand(1,99),
-            'id_menu' => $menu->id_menu,
-            'qty' => $request->get('qty'),
-            'harga' =>$menu->harga_menu*$request->get('qty'),
-        ]);
 
         // $menu = Menu::where('id_menu', 'like', "%".$request->id_menu."%")->first();
 
-        // $idorder ='O'.date('ymd').rand(1,999);
+        // $idorder ='O'.date('ymd').rand(01,999);
         // Order::create([
         //     'id_order' => $idorder,
         //     'id_meja' => '01',
@@ -63,7 +62,7 @@ class DetailOrderController extends Controller
         // ]);
 
         // DetailOrder::create([
-        //     'id_dorder' => 'DO'.date('ymd').rand(1,99),
+        //     'id_dorder' => 'DO'.date('ymd').rand(01,999),
         //     'id_order'=> $idorder,
         //     'id_menu' => $menu->id_menu,
         //     'qty' => $request->get('qty'),
@@ -83,7 +82,7 @@ class DetailOrderController extends Controller
     public function show($id)
     {
         $menu = Menu::where('id_menu', 'like', "%".$id."%")->first();
-        return view('detailorder', compact('menu'));
+        return view('DetailOrder.detailorder', compact('menu'));
     }
 
     /**
@@ -94,7 +93,8 @@ class DetailOrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sorder = OrderSementara::with('menu')->where('id_sorder', 'like', "%".$id."%")->first();
+        return view('DetailOrder.edit', compact('sorder'));
     }
 
     /**
@@ -106,7 +106,15 @@ class DetailOrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'qty' => 'required'
+        ]);
+
+        $sorder = OrderSementara::with('menu')->where('id_sorder', 'like', "%".$id."%")->first();
+        $sorder->qty = $request->get('qty');
+        $sorder->harga = $sorder->menu->harga*$request->get('qty');
+        
+        $sorder->update();
     }
 
     /**
@@ -117,6 +125,8 @@ class DetailOrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        OrderSementara::where('id_sorder', 'like', "%".$id."%")->first()->delete();
+        // OrderSementara::find($id)->delete();
+        return redirect()->route('detailorder.index')-> with('success', 'Detail Pesanan Berhasil Dihapus');
     }
 }
