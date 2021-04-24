@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5" enctype="multipart/form-data">
+<div class="container mt-5">
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 24rem;">
             <div class="card-header">
                 Detail Order
             </div>
         <div class="card-body">
-                    <form action="{{route('detailorder.update')}}" method="get" class="tm-contact-form">
+                    <form action="{{ route('detailorder.edit', $sorder->id_sorder) }}" method="get" class="tm-contact-form">
                         @csrf
                         <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
                             <div

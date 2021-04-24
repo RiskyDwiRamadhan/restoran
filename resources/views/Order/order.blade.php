@@ -20,7 +20,7 @@
             <!-- End Form Search -->
 
             <div class="float-right my-2">
-            <a class="btn btn-success" href="{{ route('detailorder.create') }}"> Input Detail Order</a>
+            <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
             </div>
         </div>
     </div>
@@ -46,13 +46,13 @@
                     <td>{{ $D->id_sorder}}</td>
                     <td>{{ $D->harga }}</td>
                     <td>
-                        <form action="{{ route('detailorder.destroy', $D->id_sorder) }}" method="POST">
+                        <form action="{{ route('detailorder.destroy', $D->id_sorder) }}" method="GET">
 
                             <a class="btn btn-primary" href="{{ route('detailorder.edit', $D->id_sorder) }}">Edit</a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
-                            {{-- <a class="btn btn-warning" href="{{ route('detailorder.nilai', $D->id_sorder) }}">Nilai</a> --}}
+                            
                         </form>
                     </td>
                 </tr>

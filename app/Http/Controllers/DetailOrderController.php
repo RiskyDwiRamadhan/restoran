@@ -111,10 +111,13 @@ class DetailOrderController extends Controller
         ]);
 
         $sorder = OrderSementara::with('menu')->where('id_sorder', 'like', "%".$id."%")->first();
+        $sorder->id_sorder = $id;
+        $sorder->id_menu = $sorder->id_menu;
         $sorder->qty = $request->get('qty');
         $sorder->harga = $sorder->menu->harga*$request->get('qty');
         
         $sorder->update();
+        return redirect()->route('detailorder.index')->with('success', 'Detail Pesanan Berhasil Diubah');
     }
 
     /**
