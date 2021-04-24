@@ -146,7 +146,7 @@
                                         <p class="u-text u-text-4">{{ $M->deskripsi }}</p>
                                         <h6 class="u-text u-text-palette-3-base u-text-5">Rp {{ $M->harga_menu }}</h6>
                                         
-                                        <a href="{{ route('ordersementara.show', $M->id_menu) }}"
+                                        <a href="{{ route('detailorder.show', $M->id_menu) }}"
                                             class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-1">Tambah</a>
                                     </div>
                                 </div>

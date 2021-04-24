@@ -20,7 +20,8 @@
             <!-- End Form Search -->
 
             <div class="float-right my-2">
-            <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
+                <a class="btn btn-dark" href="{{ route('detailorder.store') }}">Order</a>                        
+                <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
             </div>
         </div>
     </div>
@@ -43,10 +44,10 @@
                 <tr>
                     <td>{{ $D->menu->nama_menu }}</td>
                     <td>{{ $D->menu->harga_menu }}</td>
-                    <td>{{ $D->id_sorder}}</td>
+                    <td>{{ $D->qty}}</td>
                     <td>{{ $D->harga }}</td>
                     <td>
-                        <form action="{{ route('detailorder.destroy', $D->id_sorder) }}" method="GET">
+                        <form action="{{ route('detailorder.destroy', $D->id_sorder) }}" method="POST">
 
                             <a class="btn btn-primary" href="{{ route('detailorder.edit', $D->id_sorder) }}">Edit</a>
                             @csrf
@@ -57,5 +58,5 @@
                     </td>
                 </tr>
             @endforeach
-    </table>            
+    </table>    
 @endsection

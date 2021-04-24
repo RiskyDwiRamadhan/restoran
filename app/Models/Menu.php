@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Favorite;
 use App\Models\DetaiOrder;
+use App\Models\OrderSementara;
 
 class Menu extends Model
 {
@@ -37,4 +38,8 @@ class Menu extends Model
         return $this->hashMany(DetailOrder::class, 'id_dorder');
     }
     
+    public function sorder()
+    {
+        return $this->hashMany(OrderSementara::class, 'id_menu');
+    }
 }

@@ -53,13 +53,13 @@ class DetailOrderController extends Controller
 
         // $menu = Menu::where('id_menu', 'like', "%".$request->id_menu."%")->first();
 
-        // $idorder ='O'.date('ymd').rand(01,999);
-        // Order::create([
-        //     'id_order' => $idorder,
-        //     'id_meja' => '01',
-        //     'harga_total' => 30000,
-        //     'tgl_order' => now()
-        // ]);
+        $idorder ='O'.date('ymd').rand(01,999);
+        Order::create([
+            'id_order' => $idorder,
+            'id_meja' => '01',
+            'harga_total' => 30000,
+            'tgl_order' => now()
+        ]);
 
         // DetailOrder::create([
         //     'id_dorder' => 'DO'.date('ymd').rand(01,999),
@@ -110,13 +110,14 @@ class DetailOrderController extends Controller
             'qty' => 'required'
         ]);
 
-        $sorder = OrderSementara::with('menu')->where('id_sorder', 'like', "%".$id."%")->first();
+        $sorder = OrderSementara::where('id_sorder', 'like', "%".$id."%")->with('menu')->first();
         $sorder->id_sorder = $id;
         $sorder->id_menu = $sorder->id_menu;
         $sorder->qty = $request->get('qty');
         $sorder->harga = $sorder->menu->harga*$request->get('qty');
         
         $sorder->update();
+
         return redirect()->route('detailorder.index')->with('success', 'Detail Pesanan Berhasil Diubah');
     }
 
@@ -132,4 +133,22 @@ class DetailOrderController extends Controller
         // OrderSementara::find($id)->delete();
         return redirect()->route('detailorder.index')-> with('success', 'Detail Pesanan Berhasil Dihapus');
     }
+    
+    public function simpanSementara(Request $request, $id)
+    {
+        $request->validate([
+            'qty' => 'required'
+        ]);
+        
+        $menu = Menu::where('id_menu', 'like', "%".$id."%")->first();
+
+        OrderSementara::create([
+            'id_sorder' => 'SO'.date('Ymd').rand(01,999),
+            'id_menu' => $menu->id_menu,
+            'qty' => $request->get('qty'),
+            'harga' =>$menu->harga_menu*$request->get('qty'),
+        ]);
+        return redirect()->route('home.menu');
+    }
+
 }
