@@ -14,10 +14,10 @@ class CreateDetailOrdersTable extends Migration
     public function up()
     {
         Schema::create('detail_order', function (Blueprint $table) {
-            $table->String('id_dorder', 10)->primary();
-            $table->String('id_order', 10)->nullable();
+            $table->String('id_dorder', 15)->primary();
+            $table->String('id_order', 15)->nullable();
             $table->foreign('id_order')->references('id_order')->on('order')->nullable();
-            $table->String('id_menu', 10)->nullable();
+            $table->String('id_menu', 15)->nullable();
             $table->foreign('id_menu')->references('id_menu')->on('menu')->nullable();
             $table->Integer('qty')->nullable();
             $table->Integer('harga')->nullable();

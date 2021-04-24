@@ -14,8 +14,8 @@ class CreateMejaRestoransTable extends Migration
     public function up()
     {
         Schema::create('meja', function (Blueprint $table) {
-            $table->String('id_meja', 10)->primary();
-            $table->String('no_meja', 10)->nullable();
+            $table->String('id_meja', 15)->primary();
+            $table->String('no_meja', 15)->nullable();
             $table->String('kapasitas', 10)->nullable();
             $table->String('status_meja', 50)->nullable();
             $table->String('image', 255)->nullable();

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFavoriteRestoransTable extends Migration
+class CreateOrderSementarasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateFavoriteRestoransTable extends Migration
      */
     public function up()
     {
-        Schema::create('favorite', function (Blueprint $table) {
-            $table->String('id_favorite', 15)->primary();
+        Schema::create('order_sementara', function (Blueprint $table) {
+            $table->String('id_sorder', 15)->primary();
             $table->String('id_menu', 15)->nullable();
             $table->foreign('id_menu')->references('id_menu')->on('menu')->nullable();
-            $table->Date('tangal_favorite')->nullable();
+            $table->Integer('qty')->nullable();
+            $table->Integer('harga')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateFavoriteRestoransTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('favorite');
+        Schema::dropIfExists('order_sementara');
     }
 }

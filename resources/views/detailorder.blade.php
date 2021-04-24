@@ -8,7 +8,7 @@
                 Detail Order
             </div>
         <div class="card-body">
-                    <form action="{{ route('detailorder.store') }}" method="post" class="tm-contact-form">
+                    <form action="{{ route('ordersementara.store') }}" method="post" class="tm-contact-form">
                         @csrf
                         <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
                             <div

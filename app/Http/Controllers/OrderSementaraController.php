@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DetailOrder;
-use App\Models\Order;
-use App\Models\Menu;
 use Illuminate\Http\Request;
+use App\Models\Menu;
 use App\Models\OrderSementara;
-use Illuminate\Support\Facades\Storage;
 
-class DetailOrderController extends Controller
+class OrderSementaraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,7 +35,7 @@ class DetailOrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {        
+    {
         $request->validate([
             'qty' => 'required'
         ]);
@@ -51,27 +48,6 @@ class DetailOrderController extends Controller
             'qty' => $request->get('qty'),
             'harga' =>$menu->harga_menu*$request->get('qty'),
         ]);
-
-        // $menu = Menu::where('id_menu', 'like', "%".$request->id_menu."%")->first();
-
-        // $idorder ='O'.date('ymd').rand(1,999);
-        // Order::create([
-        //     'id_order' => $idorder,
-        //     'id_meja' => '01',
-        //     'harga_total' => 30000,
-        //     'tgl_order' => now()
-        // ]);
-
-        // DetailOrder::create([
-        //     'id_dorder' => 'DO'.date('ymd').rand(1,99),
-        //     'id_order'=> $idorder,
-        //     'id_menu' => $menu->id_menu,
-        //     'qty' => $request->get('qty'),
-        //     'harga' =>$menu->harga_menu*$request->get('qty'),
-
-        // ]);
-
-        // return redirect()->route('/menu');
     }
 
     /**
@@ -82,8 +58,7 @@ class DetailOrderController extends Controller
      */
     public function show($id)
     {
-        $menu = Menu::where('id_menu', 'like', "%".$id."%")->first();
-        return view('detailorder', compact('menu'));
+        //
     }
 
     /**
