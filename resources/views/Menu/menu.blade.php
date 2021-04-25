@@ -52,8 +52,8 @@
                             <p class="u-align-center-lg u-text u-text-4">{{ $data[$i]->menu->deskripsi }}.</p>
                             <h3 class="u-align-center-lg u-custom-font u-text u-text-5">Rp {{ $data[$i]->menu->harga_menu }}
                             </h3>
-                            <a href="https://nicepage.com/c/pricing-html-templates"
-                                class="u-btn u-button-style u-palette-5-dark-2 u-btn-1">Tambah</a>
+                            {{-- <a href="https://nicepage.com/c/pricing-html-templates"
+                                class="u-btn u-button-style u-palette-5-dark-2 u-btn-1">Tambah</a> --}}
                         </div>
                     </div>
                 @endfor
@@ -83,7 +83,7 @@
                                     <p class="u-text u-text-4">{{ $M->deskripsi }}</p>
                                     <h6 class="u-text u-text-palette-3-base u-text-5">Rp {{ $M->harga_menu }}</h6>
                                     
-                                    <a href="https://nicepage.com/k/quiz-html-templates"
+                                    <a href="{{ route('detailorder.show', $M->id_menu) }}"
                                         class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-1">Tambah</a>
                                 </div>
                             </div>
@@ -118,8 +118,8 @@
                         </div>
                         <p class="u-align-center-lg u-text u-text-4">{{ $data[2]->menu->deskripsi }}</p>
                         <h3 class="u-align-center-lg u-custom-font u-text u-text-9">Rp {{ $data[2]->menu->harga_menu }}</h3>
-                        <a href="https://nicepage.com/c/pricing-html-templates"
-                            class="u-btn u-button-style u-palette-5-dark-2 u-btn-1">Tambah</a>
+                        {{-- <a href="https://nicepage.com/c/pricing-html-templates"
+                            class="u-btn u-button-style u-palette-5-dark-2 u-btn-1">Tambah</a> --}}
                     </div>
                 </div>
             </div>

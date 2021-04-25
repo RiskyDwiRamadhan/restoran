@@ -39,24 +39,31 @@
             <th>QTY</th>
             <th>Total Harga</th>
             <th width="280px">Action</th>
-            </tr>
-            @foreach ($detailorder as $D)
-                <tr>
-                    <td>{{ $D->menu->nama_menu }}</td>
-                    <td>{{ $D->menu->harga_menu }}</td>
-                    <td>{{ $D->qty}}</td>
-                    <td>{{ $D->harga }}</td>
-                    <td>
-                        <form action="{{ route('detailorder.destroy', $D->id_sorder) }}" method="POST">
+        </tr>
+        @foreach ($detailorder as $D)
+        <tr>
+            <td>{{ $D->menu->nama_menu }}</td>
+            <td>{{ $D->menu->harga_menu }}</td>
+            <td>{{ $D->qty}}</td>
+            <td>{{ $D->harga }}</td>
+            <td>
+                <form action="{{ route('detailorder.destroy', $D->id_sorder) }}" method="POST">
 
-                            <a class="btn btn-primary" href="{{ route('detailorder.edit', $D->id_sorder) }}">Edit</a>
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                    <a class="btn btn-primary" href="{{ route('detailorder.edit', $D->id_sorder) }}">Edit</a>
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
                             
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
+                </form>
+            </td>
+        </tr>
+        @endforeach
+        <tr>
+            <th></th>
+            <th></th>
+            <th width="110px">Total Harga</th>
+            <th>{{$detailorder->sum('harga')}}</th>
+            <th></th>
+        </tr>
     </table>    
-@endsection
+@endsection 
