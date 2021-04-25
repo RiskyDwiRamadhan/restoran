@@ -20,7 +20,7 @@
             <!-- End Form Search -->
 
             <div class="float-right my-2">
-                <a class="btn btn-dark" href="{{ route('detailorder.store') }}">Order</a>                        
+                <a class="btn btn-dark" href="{{ route('detailorder.save') }}">Order</a>                        
                 <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
             </div>
         </div>

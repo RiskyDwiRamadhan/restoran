@@ -53,13 +53,13 @@ class DetailOrderController extends Controller
 
         // $menu = Menu::where('id_menu', 'like', "%".$request->id_menu."%")->first();
 
-        $idorder ='O'.date('ymd').rand(01,999);
-        Order::create([
-            'id_order' => $idorder,
-            'id_meja' => '01',
-            'harga_total' => 30000,
-            'tgl_order' => now()
-        ]);
+        // $idorder ='O'.date('ymd').rand(01,999);
+        // Order::create([
+        //     'id_order' => $idorder,
+        //     'id_meja' => '01',
+        //     'harga_total' => 30000,
+        //     'tgl_order' => now()
+        // ]);
 
         // DetailOrder::create([
         //     'id_dorder' => 'DO'.date('ymd').rand(01,999),
@@ -130,7 +130,6 @@ class DetailOrderController extends Controller
     public function destroy($id)
     {
         OrderSementara::where('id_sorder', 'like', "%".$id."%")->first()->delete();
-        // OrderSementara::find($id)->delete();
         return redirect()->route('detailorder.index')-> with('success', 'Detail Pesanan Berhasil Dihapus');
     }
     
@@ -148,6 +147,32 @@ class DetailOrderController extends Controller
             'qty' => $request->get('qty'),
             'harga' =>$menu->harga_menu*$request->get('qty'),
         ]);
+        return redirect()->route('home.menu');
+    }
+
+    public function save(){
+        $sementara = OrderSementara::All();
+        $idorder ='O'.date('ymd').rand(01,999);
+        Order::create([
+            'id_order' => $idorder,
+            'id_meja' => '01',
+            'harga_total' => $sementara->sum('harga'),
+            'tgl_order' => now()
+        ]);
+
+        foreach ($sementara as $key => $value) {
+            $menu = Menu::where('id_menu', 'like', "%".$value->id_menu."%")->first();
+            $order = array(
+                'id_dorder' => 'DO'.date('ymd').rand(01,999),
+                'id_order'=> $idorder,
+                'id_menu' => $menu->id_menu,
+                'qty' => $value->qty,
+                'harga' =>$menu->harga_menu*$value->qty,
+            );
+            DetailOrder::insert($order);
+            OrderSementara::where('id_sorder', 'like', "%".$value->id_dorder."%")->first()->delete();
+        }       
+        // OrderSementara::All()->delete();
         return redirect()->route('home.menu');
     }
 
