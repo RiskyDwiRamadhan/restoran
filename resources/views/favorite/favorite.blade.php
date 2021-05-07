@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -40,7 +40,7 @@
         </tr>
         @foreach ($favorite as $f)
         <tr>
-            <td><img src="{{ $f->menu->image }}" width="150px" height="150px"></td>
+            <td><img src="{{ $f->menu->image }}" width="100px" height="100px"></td>
             <td>{{ $f->menu->nama_menu }}</td>
             <td>{{ $f->menu->harga_menu }}</td>
             <td>

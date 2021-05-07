@@ -12,11 +12,16 @@ class FavoriteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        // $favorite = Favorite::where('tangal_favorite', 'like', "%".NOW()."%")->with('menu')->paginate(3);
-        // return view('home', compact('favorite'));
-        $favorite = Favorite::with('menu')->paginate(5);
+    public function index(Request $request)
+    {   
+        if($request->has('search')){ // Pemilihan jika ingin melakukan pencarian kode_barang
+            // $favorite = Favorite::with('menu')->where('id_favorite', 'like', "%".$request->search."%")
+            //                 ->with('menu')->orwhere('nama_menu', 'like', "%".$request->search."%")
+            //                 ->with('menu')->orwhere('jenis_menu', 'like', "%".$request->search."%")
+            //                 ->with('menu')->paginate(5);
+        } else { 
+            $favorite = Favorite::with('menu')->paginate(5);
+        }
         return view('favorite.favorite',compact('favorite'));
     }
 

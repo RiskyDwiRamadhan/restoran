@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container mt-5" enctype="multipart/form-data">
@@ -13,7 +13,7 @@
                         <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
                             <div
                                 class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-                                <img src="{{ $menu->image }}" height="300px">
+                                <img src="{{ $menu->image }}" height="250px" >
                                 <div
                                     class="u-align-left-xs u-container-style u-expanded-width-xs u-group u-video-cover u-group-1">
                                     <div class="u-container-layout u-container-layout-2">
