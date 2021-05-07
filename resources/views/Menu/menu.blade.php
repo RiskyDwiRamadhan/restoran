@@ -38,9 +38,7 @@
                     <div
                         class="u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-container-style u-list-item u-repeater-item u-video-cover u-list-item-1">
                         <div class="u-container-layout u-similar-container u-container-layout-1">
-                            <img src="{{ $data[$i]->menu->image }}" alt=""
-                                class="u-expanded-width u-image u-image-default u-image-1" data-image-width="640"
-                                data-image-height="528">
+                            <img src="{{ $data[$i]->menu->image }}" alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="640" data-image-height="528">
                             <div
                                 class="u-align-center u-container-style u-group u-opacity u-opacity-85 u-palette-3-base u-group-1">
                                 <div class="u-container-layout u-container-layout-2">

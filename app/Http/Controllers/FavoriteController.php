@@ -14,8 +14,10 @@ class FavoriteController extends Controller
      */
     public function index()
     {
-        $favorite = Favorite::where('tangal_favorite', 'like', "%".NOW()."%")->with('menu')->paginate(3);
-        return view('home', compact('favorite'));
+        // $favorite = Favorite::where('tangal_favorite', 'like', "%".NOW()."%")->with('menu')->paginate(3);
+        // return view('home', compact('favorite'));
+        $favorite = Favorite::with('menu')->paginate(5);
+        return view('favorite.favorite',compact('favorite'));
     }
 
     /**
