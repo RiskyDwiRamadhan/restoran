@@ -114,7 +114,7 @@ class DetailOrderController extends Controller
         $sorder->id_sorder = $id;
         $sorder->id_menu = $sorder->id_menu;
         $sorder->qty = $request->get('qty');
-        $sorder->harga = $sorder->menu->harga*$request->get('qty');
+        $sorder->harga = $sorder->menu->harga_menu*$request->get('qty');
         
         $sorder->update();
 

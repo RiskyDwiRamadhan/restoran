@@ -20,7 +20,7 @@
             <!-- End Form Search -->
 
             <div class="float-right my-2">                  
-                <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Favorite</a>
+                <a class="btn btn-success" href="{{ route('favorite.create') }}"> Input Favorite</a>
             </div>
         </div>
     </div>
@@ -46,6 +46,7 @@
             <td>
                 <form action="{{ route('favorite.destroy', $f->id_favorite) }}" method="POST">
 
+                    <a class="btn btn-info" href="{{ route('favorite.show',$f->id_favorite) }}">Show</a>
                     <a class="btn btn-primary" href="{{ route('favorite.edit', $f->id_favorite) }}">Edit</a>
                     @csrf
                     @method('DELETE')

@@ -13,6 +13,7 @@ class Favorite extends Model
    protected $table="favorite"; 
    public $timestamps= false;
    protected $primaryKey = 'id_favorite';
+   protected $keyType = "string";
    /**
     * The attributes that are mass assignable.
     *
