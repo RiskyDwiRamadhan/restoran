@@ -6,19 +6,6 @@
                 <h2>Menu Favorite</h2>
             </div>
             
-            <!-- Form Search -->
-            <div class="float-left my-2">
-                <form action="{{ route('favorite.index') }}" method="GET">
-                    <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" name="search" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i> Cari</button>
-                        </span>
-                    </div>
-                </form>
-            </div>
-            <!-- End Form Search -->
-
             <div class="float-right my-2">                  
                 <a class="btn btn-success" href="{{ route('favorite.create') }}"> Input Favorite</a>
             </div>
@@ -56,5 +43,8 @@
             </td>
         </tr>
         @endforeach     
-    </table>    
+    </table>   
+    <div class="d-flex">
+        {{ $favorite->links() }}
+    </div> 
 @endsection 

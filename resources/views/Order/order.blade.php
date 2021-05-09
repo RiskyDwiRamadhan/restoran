@@ -53,4 +53,7 @@
             <th></th>
         </tr>
     </table>    
+    <div class="d-flex">
+        {{ $detailorder->links() }}
+    </div>
 @endsection 
