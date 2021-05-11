@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Halaman Home
+    Halaman Meja
 @endsection
 @section('template')
   <link rel="stylesheet" href="\template\Meja.css" media="screen"> 
