@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\MejaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::get('/save', [DetailOrderController::class, 'save'])->name('detailorder.s
 Route::resource('order', OrderController::class);
 Route::resource('favorite', FavoriteController::class);
 Route::resource('detailorder', DetailOrderController::class);
+Route::resource('booking', MejaController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
