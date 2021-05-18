@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -6,7 +7,7 @@
                 <h2>RESTORAN NUSANTARA</h2>
             </div>
 
-            <div class="float-left my-4">
+            {{-- <div class="float-left my-4">
                 <form action="/mahasiswa/cari/" method="GET">
                     <div class="input-group">
                         <input type="text" name="keyword" class="form-control" placeholder="Search users...">
@@ -15,10 +16,10 @@
                         </button>
                     </div>
                 </form>
-            </div>
+            </div> --}}
             
             <div class="float-right my-2">
-                <a class="btn btn-success" href="{{ route('home.meja') }}"> Input Mahasiswa</a>
+                <a class="btn btn-success" href="{{ route('booking.create') }}"> Input Meja</a>
             </div>
         </div>
     </div>
@@ -41,19 +42,19 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($meja as $meja)
+            @foreach ($meja as $Meja)
                 <tr>
-                    <td>{{ $meja->id_meja }}</td>
-                    <td>{{ $meja->no_meja }}</td>
-                    <td>{{ $meja->kapasitas }}</td>
-                    <td>{{ $meja->status_meja }}</td>
-                    <td>{{ $meja->image }}</td>
+                    <td>{{ $Meja->id_meja }}</td>
+                    <td>{{ $Meja->no_meja }}</td>
+                    <td>{{ $Meja->kapasitas }}</td>
+                    <td>{{ $Meja->status_meja }}</td>
+                    <td><img src="{{ asset('storage/' . $Meja->image) }}" width="100px;" height="100px;" alt=""></td>
                     <td>
-                        <form action="{{ route('meja.destroy', $meja->Nim) }}" method="POST">
+                        <form action="{{ route('booking.destroy', $Meja->id_meja) }}" method="POST">
 
-                            <a class="btn btn-info" href="{{ route('meja.show', $Mahasiswa->Nim) }}">Show</a>
+                            <a class="btn btn-info" href="{{ route('booking.show', $Meja->id_meja) }}">Show</a>
 
-                            <a class="btn btn-primary" href="{{ route('meja.edit', $Mahasiswa->Nim) }}">Edit</a>
+                            <a class="btn btn-primary" href="{{ route('booking.edit', $Meja->id_meja) }}">Edit</a>
 
                             @csrf
                             @method('DELETE')
@@ -65,7 +66,7 @@
             @endforeach
         </tbody>
     </table>
-    <div class="d-flex">
+    {{-- <div class="d-flex">
         {{ $paginate->links() }}
-    </div>
+    </div> --}}
 @endsection

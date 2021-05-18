@@ -6,6 +6,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MejaController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------

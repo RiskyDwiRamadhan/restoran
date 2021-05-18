@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Meja;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MejaController extends Controller
 {
@@ -15,6 +16,7 @@ class MejaController extends Controller
     public function index()
     {
         $meja = Meja::all();
+        return view('booking.index', ['meja'=>$meja]);
     }
 
     /**
@@ -24,7 +26,7 @@ class MejaController extends Controller
      */
     public function create()
     {
-        return view('meja.create');
+        return view('booking.create');
     }
 
     /**
@@ -41,12 +43,20 @@ class MejaController extends Controller
             'no_meja' => 'required',
             'kapasitas'=> 'required',
             'status_meja'=> 'required',
-            'image'=> 'required',
+            'image'=> 'required|file|image|mimes:jpeg,png,jpg',
         ]);
         
-        Meja::create($request->all());
+        if ($request->file('image')) {
+            $image_name = $request->file('image')->store('images', 'public');
+        }
+        $meja = new Meja;
+        $meja->id_meja = $request->get('id_meja');
+        $meja->no_meja = $request->get('no_meja');
+        $meja->kapasitas = $request->get('kapasitas');
+        $meja->image = $image_name;
+        $meja->save();
 
-        return redirect()->route('meja.index')
+        return redirect()->route('booking.index')
             ->with('success', 'Meja Berhasil Ditambahkan');
     }
 
@@ -59,7 +69,7 @@ class MejaController extends Controller
     public function show($id_meja)
     {
         $meja = Meja::find($id_meja);
-         return view('meja.detail', compact('Meja'));
+        return view('booking.detail', ['meja'=>$meja]);
     }
 
     /**
@@ -71,7 +81,7 @@ class MejaController extends Controller
     public function edit($id_meja)
     {
         $meja = Meja::find($id_meja);
-        return view('meja.detail', compact('Meja'));
+        return view('booking.edit', compact('meja'));
     }
 
     /**
@@ -88,12 +98,25 @@ class MejaController extends Controller
             'no_meja' => 'required',
             'kapasitas'=> 'required',
             'status_meja'=> 'required',
-            'image'=> 'required',
+            'image'=> 'required|file|image|mimes:jpeg,png,jpg',
         ]);
+        
+        $meja = Meja::where('id_meja', $id_meja)->first();
+        if ($meja->image && file_exists(storage_path('app/public/' . $meja->image))) {
+            Storage::delete('public/' . $meja->image);
+        }
 
-        Meja::find($id_meja)->update($request->all());
+        if ($request->file('image') != null) {
+            $image_name = $request->file('image')->store('images', 'public');
+            $meja->image = $image_name;
+        }
 
-        return redirect()->route('meja.index')
+        $meja->id_meja = $request->get('id_meja');
+        $meja->no_meja = $request->get('no_meja');
+        $meja->kapasitas = $request->get('kapasitas');
+        $meja->save();
+
+        return redirect()->route('booking.index')
             ->with('success', 'Meja Berhasil Diupdate');
     }
 
@@ -106,7 +129,7 @@ class MejaController extends Controller
     public function destroy($id_meja)
     {
         Meja::find($id_meja)->delete();
-        return redirect()->route('meja.index')
+        return redirect()->route('booking.index')
             ->with('success', 'Meja Berhasil Dihapus');
     }
 }
