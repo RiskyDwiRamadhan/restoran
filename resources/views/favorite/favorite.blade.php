@@ -3,12 +3,12 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left mt-2">
-                <h2>Detail Order</h2>
+                <h2>Menu Favorite</h2>
             </div>
             
             <!-- Form Search -->
             <div class="float-left my-2">
-                <form action="{{ route('detailorder.index') }}" method="GET">
+                <form action="{{ route('favorite.index') }}" method="GET">
                     <div class="input-group custom-search-form">
                         <input type="text" class="form-control" name="search" placeholder="Search...">
                         <span class="input-group-btn">
@@ -19,9 +19,8 @@
             </div>
             <!-- End Form Search -->
 
-            <div class="float-right my-2">
-                <a class="btn btn-dark" href="{{ route('detailorder.save') }}">Order</a>                        
-                <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
+            <div class="float-right my-2">                  
+                <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Favorite</a>
             </div>
         </div>
     </div>
@@ -34,22 +33,20 @@
 
     <table class="table table-bordered">
         <tr>
+            <th>Gambar Menu</th>
             <th>Nama Menu</th>
             <th>Harga Menu</th>
-            <th>QTY</th>
-            <th>Total Harga</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($detailorder as $D)
+        @foreach ($favorite as $f)
         <tr>
-            <td>{{ $D->menu->nama_menu }}</td>
-            <td>{{ $D->menu->harga_menu }}</td>
-            <td>{{ $D->qty}}</td>
-            <td>{{ $D->harga }}</td>
+            <td><img src="{{ $f->menu->image }}" width="100px" height="100px"></td>
+            <td>{{ $f->menu->nama_menu }}</td>
+            <td>{{ $f->menu->harga_menu }}</td>
             <td>
-                <form action="{{ route('detailorder.destroy', $D->id_sorder) }}" method="POST">
+                <form action="{{ route('favorite.destroy', $f->id_favorite) }}" method="POST">
 
-                    <a class="btn btn-primary" href="{{ route('detailorder.edit', $D->id_sorder) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('favorite.edit', $f->id_favorite) }}">Edit</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>
@@ -57,13 +54,6 @@
                 </form>
             </td>
         </tr>
-        @endforeach
-        <tr>
-            <th></th>
-            <th></th>
-            <th width="110px">Total Harga</th>
-            <th>{{$detailorder->sum('harga')}}</th>
-            <th></th>
-        </tr>
+        @endforeach     
     </table>    
 @endsection 
