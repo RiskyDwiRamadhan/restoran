@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -13,7 +13,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        $menu = Menu::paginate(10);
+        return view('Menu.index', ['menu' => $menu]);
     }
 
     /**
@@ -23,7 +24,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        return view('Menu.create');
     }
 
     /**
@@ -34,7 +35,16 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validasi([
+            'nama_menu' => 'required',
+            'harga_menu'=>'required',
+            'jenis_menu'=>'required',
+            'deskripsi'=>'required',
+            'image'=>'required',
+        ]);
+
+        Menu::create($request->all());
+        return redirect()->route('Menu.index')->with('success', 'Menu Berhasil Ditambahkan');
     }
 
     /**
@@ -43,9 +53,10 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_menu)
     {
-        //
+        $menu = Menu::find($id_menu);
+        return view('Menu.detail', compact('menu'));
     }
 
     /**
@@ -54,9 +65,10 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_menu)
     {
-        //
+        $menu = Menu::find($id_menu);
+        return view('Menu.detail', compact('menu'));
     }
 
     /**
@@ -66,9 +78,18 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_menu)
     {
-        //
+        $request->validasi([
+            'nama_menu' => 'required',
+            'harga_menu'=>'required',
+            'jenis_menu'=>'required',
+            'deskripsi'=>'required',
+            'image'=>'required',
+        ]);
+
+        Menu::find($id_menu)->update($request->all());
+        return redirect()->route('Menu.index')->with('success', 'Menu Berhasil Diupdate');
     }
 
     /**
@@ -77,8 +98,27 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_menu)
     {
-        //
+        Menu::find($id_menu)->delete();
+        return redirect()->route('Menu.index')->with('success', 'Menu Berhasil Dihapus');
+    }
+
+    public function seacrh(Request $request)
+    {
+        $menu = Menu::where([
+            ['id_menu', '!=', null, 'OR', 'nama_menu', '!=', null, 'OR', 'jenis_menu', '!=', null],
+            [function ($query) use ($request){
+                if(($keyword = $request->keyword)) {
+                    $query  ->orWhere('id_menu', 'like', "%{$keyword}%")
+                            ->orWhere('nama_menu', 'like', "%{$keyword}%")
+                            ->orWhere('jenis_menu', 'like', "%{$keyword}%");                                                                                
+                }
+            }]
+        ])
+        ->orderBy('id_menu')
+        ->paginate(5);
+
+        return view('menu.index', compact('menu'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

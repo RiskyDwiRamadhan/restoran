@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\DetailOrderController;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,6 @@ Route::get('/sementara/{id}', [DetailOrderController::class, 'simpanSementara'])
 Route::get('/save', [DetailOrderController::class, 'save'])->name('detailorder.save');
 Route::resource('order', OrderController::class);
 Route::resource('detailorder', DetailOrderController::class);
+
+//Menu//
+Route::resource('menu', MenuController::class);

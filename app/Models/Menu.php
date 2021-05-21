@@ -21,9 +21,9 @@ class Menu extends Model
      */
     protected $fillable = [
         'id_menu',
-        'nama_nemu',
-        'harga_nemu',
-        'jenis_nemu',
+        'nama_menu',
+        'harga_menu',
+        'jenis_menu',
         'deskripsi',
         'image'
     ];
