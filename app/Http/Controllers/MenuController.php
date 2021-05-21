@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -35,16 +36,29 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validasi([
+        $request->validate([
+            'id_menu'=>'required',
             'nama_menu' => 'required',
-            'harga_menu'=>'required',
-            'jenis_menu'=>'required',
+            'harga_menu'=> 'required',
+            'jenis_menu'=> 'required',
             'deskripsi'=>'required',
-            'image'=>'required',
+            'image'=> 'required|file|image|mimes:jpeg,png,jpg',
         ]);
+        
+        if ($request->file('image')) {
+            $image_name = $request->file('image')->store('images', 'public');
+        }
+        $menu = new Menu;
+        $menu->id_menu = $request->get('id_menu');
+        $menu->nama_menu = $request->get('nama_menu');
+        $menu->harga_menu = $request->get('harga_menu');
+        $menu->jenis_menu = $request->get('jenis_menu');
+        $menu->deskripsi = $request->get('deskripsi');
+        $menu->image = $image_name;
+        $menu->save();
 
-        Menu::create($request->all());
-        return redirect()->route('Menu.index')->with('success', 'Menu Berhasil Ditambahkan');
+        return redirect()->route('menu.index')
+            ->with('success', 'Menu Berhasil Ditambahkan');
     }
 
     /**

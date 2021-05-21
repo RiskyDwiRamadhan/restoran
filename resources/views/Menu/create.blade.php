@@ -1,75 +1,55 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
 @section('content')
     <div class="container mt-5">
 
         <div class="row justify-content-center align-items-center">
+            <div class="card" style="width: 24rem;">
+                <div class="card-header">
+                    Tambah Menu
+                </div>
+                <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form method="post" action="{{ route('menu.store') }}" id="myForm" enctype="multipart/form-data">
                         @csrf
-                        <section class="u-clearfix u-white u-section-4" id="carousel_ac32">
-                            <div class="u-clearfix u-sheet u-sheet-1">
-                              <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-                                <div class="u-layout">
-                                  <div class="u-layout-row">
-                                    <div class="u-container-style u-image u-layout-cell u-left-cell u-size-30 u-image-1" data-image-width="910" data-image-height="1365">
-                                      <div class="u-container-layout u-container-layout-1"></div>
-                                    </div>
-                                    <div class="u-align-left u-container-style u-layout-cell u-right-cell u-shape-rectangle u-size-30 u-layout-cell-2">
-                                      <div class="u-container-layout u-container-layout-2">
-                                        <h2 class="u-custom-font u-font-playfair-display u-text u-text-1">TAMBAH MENU</h2>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                @if ($errors->any())
-                                                    <div class="alert alert-danger">
-                                                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                                        <ul>
-                                                            @foreach ($errors->all() as $error)
-                                                                <li>{{ $error }}</li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </div>
-                                                @endif
-                                        <div class="u-form u-form-1">
-                                          <form action="{{route ('menu.store')}}" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form" id="myform">
-                                            <div class="u-form-group u-form-name">
-                                              <label for="nama_menu" class="u-form-control-hidden u-label">Nama Menu</label>
-                                              <input type="text" placeholder="Masukkan Nama Menu" id="nama_menu" name="nama_menu" class="u-border-2 u-border-white u-custom-font u-font-georgia u-grey-40 u-input u-input-rectangle u-text-white" required="nama_menu">
-                                            </div>
-                                            <div class="u-form-group u-form-group">
-                                              <label for="harga_menu" class="u-form-control-hidden u-label">Harga Menu</label>
-                                              <input type="text" placeholder="Masukkan Harga Menu" id="harga_menu" name="harga_menu" class="u-border-2 u-border-white u-custom-font u-font-georgia u-grey-40 u-input u-input-rectangle u-text-white" required="harga_menu">
-                                            </div>
-                                            <div class="u-form-group u-form-group">
-                                                <label for="jenis_menu" class="u-form-control-hidden u-label">Jenis Menu</label>
-                                                <select id="jenis_menu" name="jenis_menu" class="u-border-2 u-border-white u-custom-font u-font-georgia u-grey-40 u-input u-input-rectangle u-text-white" required="jenis_menu">
-                                                    <option value="Makanan">Makanan</option>
-                                                    <option value="Minuman">Minuman</option>
-                                                    <option value="Jajanan">Jajanan</option>
-                                                </select>
-                                              </div>
-                                            <div class="u-form-group u-form-group">
-                                              <label for="deskripsi" class="u-form-control-hidden u-label">Deskripsi</label>
-                                              <textarea placeholder="Tulisakan Deskripsi Bahan Menu" rows="4" cols="50" id="deskripsi" name="message" class="u-border-2 u-border-white u-custom-font u-font-georgia u-grey-40 u-input u-input-rectangle u-text-white" required="deskripsi"></textarea>
-                                            </div>
-                                            <div class="u-form-group u-form-group">
-                                                <label for="image" class="u-form-control-hidden u-label">Foto</label>
-                                                <input type="file" placeholder="Pilihlah Foto Menu" id="image" name="image" class="u-border-2 u-border-white u-custom-font u-font-georgia u-grey-40 u-input u-input-rectangle u-text-white" required="image">
-                                              </div>
-                                            <div class="u-align-left u-form-group u-form-submit">
-                                              <button href="menu.index" class="u-btn u-btn-submit u-button-style u-grey-90 u-btn-1">Submit</button>
-                                              <input type="submit" value="submit" class="u-form-control-hidden">
-                                            </div>
-                                            <div class="u-form-send-message u-form-send-success">Menu Berhasil Ditambahkan </div>
-                                            <div class="u-form-send-error u-form-send-message"> Tidak dapat menambahkan menu, mohon dicoba kembali. </div>
-                                            <input type="hidden" value="" name="recaptchaResponse">
-                                          </form>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
+                        <div class="form-group">
+                            <label for="id_menu">ID</label>
+                            <input type="text" name="id_menu" class="form-control" id="id_menu" aria-describedby="id_menu">
+                        </div>
+                        <div class="form-group">
+                            <label for="nama_menu">Nama Menu</label>
+                            <input type="nama_menu" name="nama_menu" class="form-control" id="nama_menu" aria-describedby="Nama Menu">
+                        </div>
+                        <div class="form-group">
+                            <label for="harga_menu">Harga Menu</label>
+                            <input type="harga_menu" name="harga_menu" class="form-control" id="harga_menu" aria-describedby="Harga Menu">
+                        </div>
+                        <div class="form-group">
+                            <label for="jenis_menu">Jenis Menu</label>
+                            <select name="jenis_menu" id="jenis_menu" class="form-control">
+                                <option value="Makanan">Makanan</option>
+                                <option value="Minuman">Minuman</option>
+                                <option value="Jajanan">Jajanan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="deskripsi">Deskripsi</label>
+                            <textarea type="deskripsi" name="deskripsi" class="form-control" id="deskripsi" aria-describedby="Deskripsi"></textarea>
+                        </div>
+                        <div>
+                            <label for="image">gambar: </label> <input type="file" class="form-control" required="required" name="image"></br>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
