@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\DetailOrderController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\MejaController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +32,12 @@ Route::get('/sementara/{id}', [DetailOrderController::class, 'simpanSementara'])
 Route::get('/save', [DetailOrderController::class, 'save'])->name('detailorder.save');
 
 Route::resource('order', OrderController::class);
+Route::resource('detailorder', DetailOrderController::class);
+
+Route::resource('menu', MenuController::class);
 Route::resource('favorite', FavoriteController::class);
 Route::resource('detailorder', DetailOrderController::class);
+Route::resource('booking', MejaController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

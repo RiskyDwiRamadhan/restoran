@@ -11,7 +11,7 @@
     
 <section class="skrollable u-align-center u-clearfix u-image u-parallax u-shading u-section-1" id="carousel_b17f" data-image-width="1280" data-image-height="853">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <h1 class="u-custom-font u-font-playfair-display u-text u-text-1">RESTORAN NUSANTARA</h1>
+      <h1 class="u-custom-font u-font-playfair-display u-text u-text-1">KEDAI HOMY</h1>
       <p class="u-text u-text-2">Memberikan rasa khas nusantara dengan bahan-bahan pilihan<br>untuk menghasilkan rasa, aroma, dan nuansa nusantara
       </p><span class="u-icon u-icon-circle u-text-white u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 490.677 490.677" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-536a"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 490.677 490.677" x="0px" y="0px" id="svg-536a" style="enable-background:new 0 0 490.677 490.677;"><g><g><path d="M489.272,37.339c-1.92-3.307-5.44-5.333-9.259-5.333H10.68c-3.819,0-7.339,2.027-9.259,5.333    c-1.899,3.307-1.899,7.36,0.021,10.667l234.667,405.333c1.899,3.307,5.419,5.333,9.237,5.333s7.339-2.027,9.237-5.333    L489.251,48.005C491.149,44.72,491.149,40.645,489.272,37.339z"></path>
 </g>

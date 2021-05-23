@@ -20,6 +20,7 @@ class Meja extends Model
         'id_meja',
         'no_meja',
         'kapasitas',
-        'image'
+        'status_meja',
+        'image',
     ];
 }
