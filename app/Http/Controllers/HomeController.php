@@ -28,4 +28,9 @@ class HomeController extends Controller
 
     }
 
+    public function admin(){
+        // $meja = Meja::where('status_meja', 'like', "%"."kosong"."%")->paginate(6);
+        return view('admin');
+
+    }
 }

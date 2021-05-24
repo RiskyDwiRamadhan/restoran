@@ -45,7 +45,8 @@
                                             <thead>
                                                 <tr>
                                                     <th style="min-width: 300px">Details favorite</th>
-                                                    <th style="min-width:110px">Actions</th>
+                                                    <th style="width:110px">Category</th>
+                                                    <th style="width:110px">Actions</th>
                                                 </tr>
                                             </thead>
                                         @foreach ($favorite as $f)
@@ -58,6 +59,8 @@
                                                         <p>{{ $f->menu->harga_menu }}</p>
                                                         <p>{{ $f->menu->deskripsi }}</p>
                                                     </td>
+
+                                                    <td>{{ $f->menu->jenis_menu }}</td>
 
                                                     <td>
                                                         <form action="{{ route('favorite.destroy', $f->id_favorite) }}" method="POST">

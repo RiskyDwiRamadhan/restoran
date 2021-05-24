@@ -4,9 +4,9 @@
 
             <!-- LOGO -->
             <div class="headerbar-left">
-                <a href="index.html" class="logo">
+                <a href="{{ route('home.admin') }}" class="logo">
                     {{-- <img alt="Logo" src="assets/images/logo.png" /> --}}
-                    <span>Nura Admin</span>
+                    <span>HOMY ADMIN</span>
                 </a>
             </div>
 

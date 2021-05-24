@@ -25,8 +25,9 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
-Route::get('/menu', [HomeController::class, 'menu'])->name('home.menu');
+Route::get('/menus', [HomeController::class, 'menu'])->name('home.menu');
 Route::get('/meja', [HomeController::class, 'meja'])->name('home.meja');
+Route::get('/admin', [HomeController::class, 'admin'])->name('home.admin');
 
 Route::get('/sementara/{id}', [DetailOrderController::class, 'simpanSementara'])->name('detailorder.sementara');
 Route::get('/save', [DetailOrderController::class, 'save'])->name('detailorder.save');

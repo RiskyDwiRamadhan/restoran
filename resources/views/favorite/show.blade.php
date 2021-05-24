@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section('title')
+    Admin-Favorite Menu
+@endsection
 @section('content')
     <div class="container mt-5" enctype="multipart/form-data">
         <div class="row justify-content-center align-items-center">
@@ -19,4 +21,4 @@
             </div>
         </div>
     </div>
-@endsection
+@endsection 

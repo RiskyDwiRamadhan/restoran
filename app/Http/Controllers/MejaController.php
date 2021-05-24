@@ -15,7 +15,7 @@ class MejaController extends Controller
      */
     public function index()
     {
-        $meja = Meja::all();
+        $meja = Meja::paginate(5);
         return view('booking.index', ['meja'=>$meja]);
     }
 
