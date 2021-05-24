@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container mt-5">
@@ -10,7 +10,7 @@
         <div class="card-body">
                     <form action="{{ route('detailorder.update', $sorder->id_sorder) }}" method="POST" class="tm-contact-form" enctype="multipart/form-data">
                         @csrf
-                        @method('GET')
+                        @method('PUT')
                         <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
                             <div
                                 class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">

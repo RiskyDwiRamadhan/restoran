@@ -11,6 +11,7 @@ class Meja extends Model
     protected $table="meja"; 
     public $timestamps= false;
     protected $primaryKey = 'id_meja';
+    protected $keyType = "string";
     /**
      * The attributes that are mass assignable.
      *

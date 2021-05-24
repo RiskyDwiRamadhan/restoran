@@ -15,7 +15,7 @@ class HomeController extends Controller
     }
 
     public function menu(){
-        $data = Favorite::with('menu')->get();
+        $data = Favorite::with('menu')->paginate(2);
         $makanan = Menu::where('jenis_menu', 'like', "%"."makanan"."%")->paginate(4);
         $minuman = Menu::where('jenis_menu', 'like', "%"."minuman"."%")->paginate(4);
         return view('Menu.menu',compact('makanan', 'minuman', 'data'));
@@ -28,4 +28,9 @@ class HomeController extends Controller
 
     }
 
+    public function admin(){
+        // $meja = Meja::where('status_meja', 'like', "%"."kosong"."%")->paginate(6);
+        return view('admin');
+
+    }
 }

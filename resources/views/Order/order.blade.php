@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.master')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -6,19 +6,6 @@
                 <h2>Detail Order</h2>
             </div>
             
-            <!-- Form Search -->
-            <div class="float-left my-2">
-                <form action="{{ route('detailorder.index') }}" method="GET">
-                    <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" name="search" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i> Cari</button>
-                        </span>
-                    </div>
-                </form>
-            </div>
-            <!-- End Form Search -->
-
             <div class="float-right my-2">
                 <a class="btn btn-dark" href="{{ route('detailorder.save') }}">Order</a>                        
                 <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
@@ -66,4 +53,7 @@
             <th></th>
         </tr>
     </table>    
+    <div class="d-flex">
+        {{ $detailorder->links() }}
+    </div>
 @endsection 

@@ -12,6 +12,7 @@ class OrderSementara extends Model
     protected $table="order_sementara"; 
     public $timestamps= false;
     protected $primaryKey = 'id_sorder';
+    protected $keyType = "string";
 
     
    protected $fillable = [

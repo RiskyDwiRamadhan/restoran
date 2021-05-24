@@ -20,7 +20,7 @@
                 <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url('/')}}" style="padding: 10px 20px;">Home</a>
             </li>
             <li class="u-nav-item">
-                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url('/menu')}}" style="padding: 10px 20px;">Menu</a>
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{ route('home.menu') }}" style="padding: 10px 20px;">Menu</a>
             </li>
             <li class="u-nav-item">
                 <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url('/meja')}}" style="padding: 10px 20px;">Meja</a>
