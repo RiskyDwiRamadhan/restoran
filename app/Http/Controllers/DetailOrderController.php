@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DetailOrder;
 use App\Models\Order;
+use App\Models\Meja;
 use App\Models\Menu;
 use App\Models\OrderSementara;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class DetailOrderController extends Controller
     public function index(Request $request)
     {
         $detailorder = OrderSementara::paginate(5);
-        return view('Order.order', compact('detailorder'));
+        $meja = Meja::All();
+        return view('Order.order', compact('detailorder', 'meja'));
     }
 
     /**
@@ -119,15 +121,21 @@ class DetailOrderController extends Controller
         return redirect()->route('home.menu');
     }
 
-    public function save(){
+    public function save(Request $request){
         $sementara = OrderSementara::All();
         $idorder ='O'.date('ymd').rand(01,999);
-        Order::create([
-            'id_order' => $idorder,
-            'id_meja' => '01',
-            'harga_total' => $sementara->sum('harga'),
-            'tgl_order' => now()
-        ]);
+
+        $order = new Order;
+        $order->id_order = $idorder;
+        $order->id_meja = $request->get('no_meja');
+        $order->harga_total = $sementara->sum('harga');
+        $order->tgl_order = now();
+        $order->status = 'belum';
+        $order->save();
+
+        $meja = Meja::find($request->get('no_meja'));
+        $meja->status_meja = 'terisi';
+        $meja->update();
 
         foreach ($sementara as $key => $value) {
             $menu = Menu::where('id_menu', 'like', "%".$value->id_menu."%")->first();

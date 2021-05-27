@@ -14,6 +14,7 @@ class Menu extends Model
     protected $table="menu"; 
     public $timestamps= false;
     protected $primaryKey = 'id_menu';
+    protected $keyType = "string";
     /**
      * The attributes that are mass assignable.
      *

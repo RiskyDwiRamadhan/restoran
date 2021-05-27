@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    Admin-Favorite Menu
+Dashboard - Admin
 @endsection
 @section('content')
         <div class="content-page">

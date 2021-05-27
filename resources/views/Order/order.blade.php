@@ -6,12 +6,20 @@
                 <h2>Detail Order</h2>
             </div>
             
-            <div class="float-right my-2">
+            {{-- <div class="float-right my-2">
                 <a class="btn btn-dark" href="{{ route('detailorder.save') }}">Order</a>                        
                 <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
-            </div>
+            </div> --}}
         </div>
     </div>
+
+    <form method="post" action="{{ route('detailorder.save') }}" id="myForm" enctype="multipart/form-data">
+        @csrf
+        @method('GET')
+        <div class="float-right my-2">
+            <button type="submit" class="btn btn-primary">Submit</button>                   
+            <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
+        </div>
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -38,7 +46,7 @@
 
                     <a class="btn btn-primary" href="{{ route('detailorder.edit', $D->id_sorder) }}">Edit</a>
                     @csrf
-                    @method('DELETE')
+                    {{-- @method('DELETE') --}}
                     <button type="submit" class="btn btn-danger">Delete</button>
                             
                 </form>
@@ -53,7 +61,25 @@
             <th></th>
         </tr>
     </table>    
+
     <div class="d-flex">
         {{ $detailorder->links() }}
     </div>
+
+    <div class="container mt-1 " style="width: 24rem;"> 
+        <div class="form-group">
+            <label for="no_meja">NO Meja</label>
+            <select name="no_meja" id="no_meja" class="form-control">
+                <option value="">--Pilih Meja--</option>
+                @foreach ($meja as $MEJA)
+                    <option value="{{$MEJA->id_meja}}">{{$MEJA->no_meja}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tanggal">Tanggal Transaksi</label>
+            <input type="tanggal" name="tanggal" class="form-control" id="tanggal" aria-describedby="Tanggal Transaksi" value="{{NOW()}}">
+        </div>
+    </div>
+</form>
 @endsection 

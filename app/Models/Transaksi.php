@@ -4,30 +4,25 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Menu;
 use App\Models\Order;
 
-class DetailOrder extends Model
+class Transaksi extends Model
 {
     use HasFactory;
-    protected $table="detail_order"; 
+    protected $table="transaksi"; 
     public $timestamps= false;
-    protected $primaryKey = 'id_dorder';
+    protected $primaryKey = 'id_transaksi';
     protected $keyType = "string";
 
     
    protected $fillable = [
-        'id_dorder',
+        'id_transaksi',
         'id_order',
-        'id_menu',
-        'qty',
-        'harga'
+        'tanggal_transaksi',
+        'harga',
+        'uang_bayar',
+        'kembalian'
     ];
-
-    public function menu()
-    {
-        return $this->belongsTo(Menu::class, 'id_menu');
-    }
     
    public function order()
    {

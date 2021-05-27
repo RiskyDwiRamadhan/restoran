@@ -26,9 +26,6 @@
                                 <li>
                                     <a href="#">Transaksi</a>
                                 </li>
-                                <li>
-                                    <a href="{{ route('booking.index') }}">Booking</a>
-                                </li>
                             </ul>
                         </li>
 
@@ -49,6 +46,9 @@
                                     <a href="{{ route('favorite.index') }}">
                                         <span> Favorite </span>
                                     </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('booking.index') }}">Meja</a>
                                 </li>
                             </ul>
                         </li>
