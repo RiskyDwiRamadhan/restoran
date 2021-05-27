@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\Favorite;
 use App\Models\Meja;
+use App\Models\Order;
+use App\Models\Transaksi;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,8 +32,10 @@ class HomeController extends Controller
     }
 
     public function admin(){
-        // $meja = Meja::where('status_meja', 'like', "%"."kosong"."%")->paginate(6);
-        return view('admin');
-
+        $tgl = date('Y-m-d');
+        $user = User::All();
+        $order = Order::where('tgl_order', 'like', "%".$tgl."%");
+        $transaksi = Transaksi::where('tanggal_transaksi', 'like', "%".$tgl."%");
+        return view('admin', compact('order', 'transaksi'));
     }
 }

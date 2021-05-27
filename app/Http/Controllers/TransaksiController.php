@@ -114,8 +114,8 @@ class TransaksiController extends Controller
         $transaksi->id_order = $order->id_order;
         $transaksi->tanggal_transaksi = now();
         $transaksi->harga = $order->harga_total;
-        // $transaksi->uang_bayar = $request->get('bayar');
-        // $transaksi->kembalian = $request->get('bayar') - $order->harga_total;
+        $transaksi->uang_bayar = $request->get('bayar');
+        $transaksi->kembalian = $request->get('bayar') - $order->harga_total;
 
         $transaksi->save();
 
