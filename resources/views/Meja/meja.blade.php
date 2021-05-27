@@ -27,7 +27,7 @@
         @foreach ($meja as $M)
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-1">
-                <img src="{{$M->image}}" alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="1000" data-image-height="1000">
+                <img src="{{ asset('storage/' . $M->image) }}" alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="1000" data-image-height="1000">
                 <p class="u-text u-text-grey-40 u-text-3">Berkapasitas {{$M->kapasitas}} orang</p>
             </div>
             </div>

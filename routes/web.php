@@ -34,15 +34,16 @@ Route::get('/sementara/{id}', [DetailOrderController::class, 'simpanSementara'])
 Route::get('/save', [DetailOrderController::class, 'save'])->name('detailorder.save');
 Route::get('/bayar/{id}', [TransaksiController::class, 'transaksi'])->name('transaksi.bayar');
 Route::get('/proses/{id}', [TransaksiController::class, 'save'])->name('transaksi.proses');
+Route::get('/transaksi/admin', [TransaksiController::class, 'admin'])->name('transaksi.admin');
 
 Route::resource('order', OrderController::class);
 Route::resource('detailorder', DetailOrderController::class);
-
 Route::resource('menu', MenuController::class);
 Route::resource('favorite', FavoriteController::class);
 Route::resource('detailorder', DetailOrderController::class);
 Route::resource('booking', MejaController::class);
 Route::resource('transaksi', TransaksiController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

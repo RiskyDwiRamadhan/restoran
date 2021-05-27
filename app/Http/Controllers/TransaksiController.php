@@ -17,13 +17,7 @@ class TransaksiController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('search')){ // Pemilihan jika ingin melakukan pencarian kode_barang
-            $order = Order::with('meja')->where('id_order', 'like', "%".$request->search."%")
-            ->andwhere('status', 'like', "%".'belum'."%")->paginate(10);
-            // $detailorder = DetailOrder::with('menu')->where('id_order', 'like', "%".$request->search."%");
-        } else { 
-            $order = Order::with('meja')->where('status', 'like', "%".'belum'."%")->paginate(10);
-        }
+        $order = Order::with('meja')->where('status', 'like', "%".'belum'."%")->paginate(10);
         return view('transaksi.index',compact('order'));
     }
 
@@ -125,5 +119,21 @@ class TransaksiController extends Controller
 
         $order->status = ('selesai');
         $order->update();
+
+        return redirect()->route('transaksi.index')
+        ->with('success', 'Transaksi Berhasil');
+    }
+
+    
+    public function admin(Request $request)
+    {
+        if($request->has('search')){ // Pemilihan jika ingin melakukan pencarian kode_barang
+            $order = Order::with('meja')->where('id_order', 'like', "%".$request->search."%")
+            ->andwhere('status', 'like', "%".'belum'."%")->paginate(10);
+            // $detailorder = DetailOrder::with('menu')->where('id_order', 'like', "%".$request->search."%");
+        } else { 
+            $order = Order::with('meja')->where('status', 'like', "%".'belum'."%")->paginate(10);
+        }
+        return view('transaksi.admin',compact('order'));
     }
 }

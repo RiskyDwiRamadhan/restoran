@@ -20,7 +20,7 @@ class DetailOrderController extends Controller
     public function index(Request $request)
     {
         $detailorder = OrderSementara::paginate(5);
-        $meja = Meja::All();
+        $meja = Meja::where('status_meja', 'like', "%".'kosong'."%")->get();
         return view('Order.order', compact('detailorder', 'meja'));
     }
 
