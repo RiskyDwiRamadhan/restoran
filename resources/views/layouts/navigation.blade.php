@@ -15,7 +15,7 @@
                 <ul class="list-inline float-right mb-0">
                     <li class="list-inline-item dropdown notif">
                         <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
-                            {{-- <img src="assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded"> --}}
+                            <img src="Nura Admin/assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                             <!-- item-->
@@ -32,10 +32,17 @@
                             </a>
 
                             <!-- item-->
-                            <a href="#" class="dropdown-item notify-item">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
                                 <i class="fas fa-power-off"></i>
-                                <span>Logout</span>
+                                    {{ __('Logout') }}
                             </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                        </div>
                         </div>
                     </li>
 

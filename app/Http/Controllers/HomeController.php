@@ -9,12 +9,35 @@ use App\Models\Order;
 use App\Models\Transaksi;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(){
+        $role = Auth::user()->role;
+        if($role == "admin"){
+            return redirect()->to('admin');
+        } else if($role == "kasir"){
+            return redirect()->to('/home');
+        } else if($role == "customer"){
+            return redirect()->to('/home');
+        } else if($role == "user"){
+            return redirect()->to('admin');
+        } else {
+            return redirect()->to('logout');
+        }
+    }
+
+    public function home(){
+        $role = Auth::user()->role;
         $data = Favorite::with('menu')->get();
-        return view('home',compact('data'));
+        return view('home',compact('data', 'role'));
     }
 
     public function menu(){
