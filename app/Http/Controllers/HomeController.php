@@ -42,7 +42,7 @@ class HomeController extends Controller
         $data = Favorite::with('menu')->paginate(2);
         $makanan = Menu::where('jenis_menu', 'like', "%"."makanan"."%")->paginate(4);
         $minuman = Menu::where('jenis_menu', 'like', "%"."minuman"."%")->paginate(4);
-        $cemilam = Menu::where('jenis_menu', 'like', "%"."cemilam"."%")->paginate(4);
+        $cemilam = Menu::where('jenis_menu', 'like', "%"."cemilan"."%")->paginate(4);
         return view('Menu.menu',compact('makanan', 'minuman', 'data', 'cemilam'));
 
     }

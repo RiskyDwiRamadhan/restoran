@@ -111,10 +111,9 @@ class MejaController extends Controller
             $meja->image = $image_name;
         }
 
-        $meja->id_meja = $request->get('id_meja');
         $meja->no_meja = $request->get('no_meja');
         $meja->kapasitas = $request->get('kapasitas');
-        $meja->save();
+        $meja->update();
 
         return redirect()->route('booking.index')
             ->with('success', 'Meja Berhasil Diupdate');
