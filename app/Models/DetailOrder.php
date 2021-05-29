@@ -13,6 +13,7 @@ class DetailOrder extends Model
     protected $table="detail_order"; 
     public $timestamps= false;
     protected $primaryKey = 'id_dorder';
+    protected $keyType = "string";
 
     
    protected $fillable = [

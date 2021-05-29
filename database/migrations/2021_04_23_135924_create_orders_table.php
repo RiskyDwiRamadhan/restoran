@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('id_meja')->references('id_meja')->on('meja')->nullable();
             $table->Integer('harga_total')->nullable();
             $table->Date('tgl_order')->nullable();
+            $table->String('status', 15)->nullable();
             $table->timestamps();
         });
     }

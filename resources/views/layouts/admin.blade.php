@@ -35,6 +35,11 @@
       @include('layouts.navigation')        
       @include('layouts.sidebar')
 	  @yield('content')	
+      <footer class="footer">
+          <span class="text-right">                
+              Copyright <a target="_blank" href="#">Restoran HOMY</a>
+          </span>
+      </footer>
       {{-- @include('layouts.footer') --}}
         <script src="Nura Admin/assets/js/modernizr.min.js"></script>
         <script src="Nura Admin/assets/js/jquery.min.js"></script>
@@ -57,7 +62,7 @@
     <script src="Nura Admin/assets/plugins/chart.js/Chart.min.js"></script>
     <script src="Nura Admin/assets/plugins/datatables/datatables.min.js"></script>
 
-{{-- 
+
     <!-- Counter-Up-->
     <script src="Nura Admin/assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="Nura Admin/assets/plugins/counterup/jquery.counterup.min.js"></script>
@@ -94,7 +99,7 @@
             });
         });
     </script>
-    <!-- END Java Script for this page --> --}}
+    <!-- END Java Script for this page -->
 
 </body>
 

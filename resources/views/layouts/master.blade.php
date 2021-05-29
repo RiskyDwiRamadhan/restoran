@@ -11,6 +11,7 @@
     </title>
     <link rel="stylesheet" href="\template\nicepage.css" media="screen">
     @yield('template')	
+    
     <script class="u-script" type="text/javascript" src="\template\jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="\template\nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.11.0, nicepage.com">

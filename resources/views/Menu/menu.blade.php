@@ -75,6 +75,7 @@
                         <div
                             class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
                             <img alt="" class="u-expanded-width-xs u-image u-image-default u-image-1"
+                            {{-- {{ asset('storage/' . $M->image) }} --}}
                                 src="{{ $M->image }}" data-image-width="1000" data-image-height="1500">
                             <div
                                 class="u-align-left-xs u-container-style u-expanded-width-xs u-group u-video-cover u-group-1">
@@ -99,27 +100,28 @@
 
     <section class="u-align-center u-clearfix u-white-10 u-section-3" id="carousel_c1c7">
         <div class="u-clearfix u-sheet u-sheet-1">
-            <h1 class="u-custom-font u-font-oswald u-text u-text-palette-3-base u-text-1">Menu Makanan</h1>
+            <h1 class="u-custom-font u-font-oswald u-text u-text-palette-3-base u-text-1">Menu Cemilan</h1>
             <p class="u-text u-text-2">Menu makanan yang tersedia adalah makanan-makanan khas nusantara dengan bahan makanan
                 pilihan asli nusantara</p>
 
             <div class="u-expanded-width-xs u-list u-repeater u-list-1">
 
-                @foreach ($makanan as $M)
+                @foreach ($cemilam as $C)
                 <form action="#" method="post" class="tm-contact-form">
                     <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
                         <div
                             class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
                             <img alt="" class="u-expanded-width-xs u-image u-image-default u-image-1"
-                                src="{{ $M->image }}" data-image-width="1000" data-image-height="1500">
+                            {{-- {{ asset('storage/' . $M->image) }} --}}
+                                src="{{ $C->image }}" data-image-width="1000" data-image-height="1500">
                             <div
                                 class="u-align-left-xs u-container-style u-expanded-width-xs u-group u-video-cover u-group-1">
                                 <div class="u-container-layout u-container-layout-2">
-                                    <h3 class="u-custom-font u-font-oswald u-text u-text-3">{{ $M->nama_menu }}</h3>
-                                    <p class="u-text u-text-4">{{ $M->deskripsi }}</p>
-                                    <h6 class="u-text u-text-palette-3-base u-text-5">Rp {{ $M->harga_menu }}</h6>
+                                    <h3 class="u-custom-font u-font-oswald u-text u-text-3">{{ $C->nama_menu }}</h3>
+                                    <p class="u-text u-text-4">{{ $C->deskripsi }}</p>
+                                    <h6 class="u-text u-text-palette-3-base u-text-5">Rp {{ $C->harga_menu }}</h6>
                                     
-                                    <a href="{{ route('detailorder.show', $M->id_menu) }}"
+                                    <a href="{{ route('detailorder.show', $C->id_menu) }}"
                                         class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-1">Tambah</a>
                                 </div>
                             </div>
@@ -146,6 +148,7 @@
                             <div
                                 class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
                                 <img alt="" class="u-expanded-width-xs u-image u-image-default u-image-1"
+                                {{-- {{ asset('storage/' . $M->image) }} --}}
                                     src="{{ $M->image }}" data-image-width="680" data-image-height="1019">
                                 <div
                                     class="u-align-left-xs u-container-style u-expanded-width-xs u-group u-video-cover u-group-1">
