@@ -8,6 +8,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MejaController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\UserDataController;
 use Illuminate\Support\Facades\Auth;
 
 /*

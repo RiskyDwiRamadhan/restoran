@@ -7,7 +7,7 @@
                 <h2>USER DATA </h2>
             </div>
             <div class="float-right my-2">
-                <a class="btn btnsuccess" href="{{ route('userdata.create') }}"> Input UserData</a>
+                <a class="btn btn-success" href="{{ route('userdata.create') }}"> Input UserData</a>
             </div>
         </div>
      </div>

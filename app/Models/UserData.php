@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserData extends Model
 {
-    protected $table ="user_data";
+    protected $table ="users";
     public $timestamps = false;
     protected $primaryKey ="id_user";
 
