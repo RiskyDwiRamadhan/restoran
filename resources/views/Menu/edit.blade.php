@@ -46,7 +46,7 @@
                         </div>
                         <div>
                             <label for="image">Gambar: </label> <input type="file" class="form-control" required="required" name="image"></br>
-                            <img width="100" height="100" src="{{ asset('storage/' . $menu->image) }}">
+                            <img width="100" height="100" src="{{ asset('storage/images' . $menu->image) }}">
                         </div>
                     
                         <button type="submit" class="btn btn-primary">Submit</button>
