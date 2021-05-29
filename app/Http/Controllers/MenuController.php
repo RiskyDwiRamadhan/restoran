@@ -15,7 +15,7 @@ class MenuController extends Controller
     public function index()
     {
         $menu = Menu::paginate(10);
-        return view('Menu.index', ['menu' => $menu]);
+        return view('menu.index', ['menu' => $menu]);
     }
 
     /**
@@ -25,7 +25,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('Menu.create');
+        return view('menu.create');
     }
 
     /**
@@ -70,7 +70,7 @@ class MenuController extends Controller
     public function show($id_menu)
     {
         $menu = Menu::find($id_menu);
-        return view('Menu.detail', compact('menu'));
+        return view('menu.detail', compact('menu'));
     }
 
     /**
@@ -82,7 +82,7 @@ class MenuController extends Controller
     public function edit($id_menu)
     {
         $menu = Menu::find($id_menu);
-        return view('Menu.detail', compact('menu'));
+        return view('menu.edit', compact('menu'));
     }
 
     /**
@@ -94,7 +94,7 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id_menu)
     {
-        $request->validasi([
+        $request->validate([
             'nama_menu' => 'required',
             'harga_menu'=>'required',
             'jenis_menu'=>'required',
@@ -103,7 +103,7 @@ class MenuController extends Controller
         ]);
 
         Menu::find($id_menu)->update($request->all());
-        return redirect()->route('Menu.index')->with('success', 'Menu Berhasil Diupdate');
+        return redirect()->route('menu.index')->with('success', 'Menu Berhasil Diupdate');
     }
 
     /**
@@ -115,7 +115,7 @@ class MenuController extends Controller
     public function destroy($id_menu)
     {
         Menu::find($id_menu)->delete();
-        return redirect()->route('Menu.index')->with('success', 'Menu Berhasil Dihapus');
+        return redirect()->route('menu.index')->with('success', 'Menu Berhasil Dihapus');
     }
 
     public function seacrh(Request $request)
