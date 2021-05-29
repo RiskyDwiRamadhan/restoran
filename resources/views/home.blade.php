@@ -78,8 +78,8 @@
             <div class="u-align-left u-container-style u-layout-cell u-right-cell u-shape-rectangle u-size-30 u-layout-cell-1">
               <div class="u-container-layout u-valign-top-xs u-container-layout-1">
                 <h2 class="u-custom-font u-font-playfair-display u-text u-text-1">About Us</h2>
-                <p class="u-text u-text-2">Sejak awal berdirinya Restoran Nusantara pada tahun 1987. Perkembangan Restoran Nusantara telah diramaikan dengan energi untuk memasak dan menyajikan makanan khas nusantara.<br>
-                  <br>Berbeda dengan restoran lainnya, Nusantara dibuat dengan ekspektasi agar semakin melestarikan makanan khas Indonesia. Kami menyadari banyak orang menyukai makanan Indonesia, tetapi sebagian besar dari mereka tidak sadar akan bahan-bahan yang sering disayangkan dalam pembuatan makanan. Menu kami menggunakan bahan-bahan pilihan sehingga menonjolkan rasa khas nusantaranya.
+                <p class="u-text u-text-2">Kedai Homy adalah sejenis tempat makan dan minum yang menyajikan aneka nasi bakar dimana menu itu menjadi ciri khas dari Kedai Homy.<br>
+                  <br>Dengan memberikan pelayanan yang memuaskan, menawarkan kebersihan dan keamanan produk pangan serta nilai-nilai tambah lainnya, Kedai Homy mengharapkan bisa menjadi suatu tempat yang eksis di kalangan masyarakat Indonesia.
                 </p>
               </div>
             </div>

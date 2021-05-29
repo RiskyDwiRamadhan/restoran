@@ -56,6 +56,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('booking', MejaController::class);
         Route::resource('menu', MenuController::class);
         Route::resource('favorite', FavoriteController::class);
+        Route::resource('userdata', UserDataController::class);
     });
     
     Route::middleware(['customer'])->group(function () {

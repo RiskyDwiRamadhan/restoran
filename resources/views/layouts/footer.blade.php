@@ -25,5 +25,5 @@
 	"></path></svg></span>
           </a>
         </div>
-        <p class="u-align-center-lg u-align-center-md u-align-center-xl u-custom-font u-font-playfair-display u-text u-text-1">RESTORAN NUSANTARA</p>
+        <p class="u-align-center-lg u-align-center-md u-align-center-xl u-custom-font u-font-playfair-display u-text u-text-1">KEDAI HOMY</p>
       </div></footer>

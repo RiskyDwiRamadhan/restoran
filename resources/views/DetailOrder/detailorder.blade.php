@@ -1,5 +1,8 @@
 @extends('layouts.master')
 
+@section('title')
+    Halaman Menu
+@endsection
 @section('content')
 <div class="container mt-5" enctype="multipart/form-data">
     <div class="row justify-content-center align-items-center">
