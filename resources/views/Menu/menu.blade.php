@@ -11,7 +11,7 @@
     <section class="u-align-center u-clearfix u-image u-section-1" id="carousel_1b8d" data-image-width="2730"
         data-image-height="4096">
         <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-            <h2 class="u-custom-font u-text u-text-body-alt-color u-text-1">NIKMATNYA MAKANAN DAN MINUMAN NUSANTARA</h2>
+            <h2 class="u-custom-font u-text u-text-body-alt-color u-text-1">NIKMATNYA MAKANAN, MINUMAN, DAN JAJANAN YANG PAS UNTUK MENEMANI HARIMU</h2>
             <span class="u-icon u-icon-circle u-text-white u-icon-1"><svg class="u-svg-link"
                     preserveAspectRatio="xMidYMin slice" viewBox="0 0 451.847 451.847" style="">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7eb4"></use>
@@ -30,7 +30,7 @@
         <div class="u-clearfix u-sheet u-sheet-1">
             <h1 class="u-custom-font u-font-playfair-display u-text u-text-1">Menu<br>Favorite
             </h1>
-            <h5 class="u-text u-text-2">Makanan khas Indonesia dengan bahan-bahan pilihan asli Indonesia</h5>
+            <h5 class="u-text u-text-2">Makanan dengan cita rasa khas Indonesia</h5>
             <div class="u-list u-repeater u-list-1">
 
 
@@ -172,6 +172,39 @@
             </div>
         </div>
     </section>
+    <section class="u-align-center u-clearfix u-palette-5-dark-3 u-section-2" id="sec-913c">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h1 class="u-custom-font u-font-playfair-display u-text u-text-1">Menu<br>Jajanan
+            </h1>
+            <h5 class="u-text u-text-2">Jajanan khas Indonesia yang cocok dinikmati dengan ngobrol santai</h5>
+            <div class="u-list u-repeater u-list-1">
+
+
+                @for ($i = 0; $i < 2; $i++)
+                    <div
+                        class="u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-container-style u-list-item u-repeater-item u-video-cover u-list-item-1">
+                        <div class="u-container-layout u-similar-container u-container-layout-1">
+                            <img src="{{ $data[$i]->menu->image }}" alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="640" data-image-height="528">
+                            <div
+                                class="u-align-center u-container-style u-group u-opacity u-opacity-85 u-palette-3-base u-group-1">
+                                <div class="u-container-layout u-container-layout-2">
+                                    <h2 class="u-align-center u-custom-font u-text u-text-3">
+                                        {{ $data[$i]->menu->nama_menu }}
+                                    </h2>
+                                </div>
+                            </div>
+                            <p class="u-align-center-lg u-text u-text-4">{{ $data[$i]->menu->deskripsi }}.</p>
+                            <h3 class="u-align-center-lg u-custom-font u-text u-text-5">Rp {{ $data[$i]->menu->harga_menu }}
+                            </h3>
+                            {{-- <a href="https://nicepage.com/c/pricing-html-templates"
+                                class="u-btn u-button-style u-palette-5-dark-2 u-btn-1">Tambah</a> --}}
+                        </div>
+                    </div>
+                @endfor
+            </div>
+        </div>
+    </section>
+
 
 
 @endsection
