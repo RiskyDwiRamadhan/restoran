@@ -27,8 +27,6 @@ class HomeController extends Controller
             return redirect()->to('/home');
         } else if($role == "customer"){
             return redirect()->to('/home');
-        } else if($role == "user"){
-            return redirect()->to('admin');
         } else {
             return redirect()->to('logout');
         }
@@ -60,6 +58,13 @@ class HomeController extends Controller
         $user = User::All();
         $order = Order::where('tgl_order', 'like', "%".$tgl."%");
         $transaksi = Transaksi::where('tanggal_transaksi', 'like', "%".$tgl."%");
-        return view('admin', compact('order', 'transaksi'));
+        return view('admin', compact('order', 'transaksi', 'user'));
+    }
+
+    public function transaksi(Request $request)
+    {
+        $tgl = date('Y-m-d');
+        $order = Order::with('meja')->where('tgl_order', 'like', "%".$tgl."%")->paginate(10);
+        return view('transaksi.admin',compact('order'));
     }
 }

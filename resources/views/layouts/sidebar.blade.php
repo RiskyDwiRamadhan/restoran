@@ -24,7 +24,7 @@
                             </a>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="#">Transaksi</a>
+                                    <a href="{{ route('home.transaksi') }}">Transaksi</a>
                                 </li>
                             </ul>
                         </li>

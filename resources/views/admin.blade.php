@@ -32,7 +32,7 @@ Dashboard - Admin
 	                            <div class="card-box noradius noborder bg-danger">
 	                                <i class="far fa-user float-right text-white"></i>
 	                                <h6 class="text-white text-uppercase m-b-20">Users</h6>
-	                                <h1 class="m-b-20 text-white counter">487</h1>
+	                                <h1 class="m-b-20 text-white counter">{{$user->count('id_user')}}</h1>
 	                                <span class="text-white">Registered</span>
 	                            </div>
 	                        </div>

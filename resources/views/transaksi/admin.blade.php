@@ -1,7 +1,7 @@
 
 @extends('layouts.admin')
 @section('title')
-Admin-Meja
+Admin-Transaksi
 @endsection
 @section('content')
 <div class="content-page">
@@ -15,10 +15,10 @@ Admin-Meja
             <div class="row">
                 <div class="col-xl-12">
                     <div class="breadcrumb-holder">
-                        <h1 class="main-title float-left">Meja</h1>
+                        <h1 class="main-title float-left">Transaksi</h1>
                         <ol class="breadcrumb float-right">
                             <li class="breadcrumb-item">Home</li>
-                            <li class="breadcrumb-item active">Meja</li>
+                            <li class="breadcrumb-item active">Transaksi</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -34,7 +34,7 @@ Admin-Meja
 
                         <div class="card-header">
                             {{-- <span class="pull-right"><a href="{{ route('menu.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus" aria-hidden="true"></i> Add menu</a></span> --}}
-                            <h3><i class="far fa-file-alt"></i> Meja</h3>
+                            <h3><i class="far fa-file-alt"></i> Transaksi</h3>
                         </div>
 
                             <div class="card-body">
@@ -43,39 +43,25 @@ Admin-Meja
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th width="5px">#</th>
-                                                <th width="110px">id</th>
-                                                <th width="110px">no meja</th>
-                                                <th width="110px">kapasitas</th>
-                                                <th width="110px">status</th>
-                                                <th width="110px">gambar</th>
-                                                <th style="width:50px">Action</th>
+                                                <th style="width:5px">#</th>
+                                                <th style="width:110px">No Meja</th>
+                                                <th style="width:110px">Harga Total</th>
+                                                <th style="width:110px">Tanggal Order</th>
+                                                <th style="width:110px">Status</th>
                                             </tr>
                                         </thead>
                                         @php $no = 1; @endphp
-                                    @foreach ($meja as $Meja)
+                                    @foreach ($order as $item)
                                         <tbody>
 
                                             <tr>
                                                 <td>{{ $no++ }}</td>
-                                                <td>{{ $Meja->id_meja }}</td>
-                                                <td>{{ $Meja->no_meja }}</td>
-                                                <td>{{ $Meja->kapasitas }}</td>
-                                                <td>{{ $Meja->status_meja }}</td>
-                                                <td><img src="{{ asset('storage/' . $Meja->image) }}" width="100px;" height="100px;" alt=""></td>
-                                                <td>
-                                                    <form action="{{ route('booking.destroy', $Meja->id_meja) }}" method="POST">
-                            
-                                                        <a class="btn btn-info btn-sm btn-block" href="{{ route('booking.show', $Meja->id_meja) }}">Show</a>
-                            
-                                                        <a class="btn btn-primary btn-sm btn-block" href="{{ route('booking.edit', $Meja->id_meja) }}">Edit</a>
-                            
-                                                        @csrf
-                                                        @method('DELETE')
-                            
-                                                        <button type="submit" class="btn btn-danger btn-sm btn-block mt-2   ">Delete</button>
-                                                    </form>
-                                                </td>
+
+                                                <td>{{ $item->meja->no_meja }}</td>
+                                                <td>{{ $item->harga_total }}</td>
+                                                <td>{{ $item->tgl_order}}</td>
+                                                <td>{{ $item->status }}</td>
+
                                                
                                             </tr>
                                         </tbody>

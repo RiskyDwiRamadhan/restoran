@@ -41,6 +41,16 @@
         </div>
     @endif
 
+{{-- <script>
+    var total = $('#total').val()
+
+    $('#bayar').on('input', function(){
+        var kembali = total - $(this).val()
+        $('#kembali').val(kembali)
+    })
+
+</script> --}}
+
     <table class="table table-bordered">
         <tr>
             <th>Nama Menu</th>
@@ -60,7 +70,7 @@
             <th style="border:none;"></th>
             <th style="border:none;"></th>
             <th width="110px">Total Harga</th>
-            <th>{{$detailorder->sum('harga')}}</th>
+            <th><input type="total" name="total" class="form-control" id="total" aria-describedby="total" value="{{$detailorder->sum('harga')}}" readonly></th>
         </tr>
         <tr>
             <th style="border:none;"></th>
@@ -72,7 +82,7 @@
             <td style="border:none;"></th>
             <td style="border:none;"></th>
             <th width="110px" >Kembalian</th>
-            <th width="210px" ><input type="kembali" name="kembali" class="form-control" id="kembali" aria-describedby="kembali"></th>
+            <th width="210px" ><input type="kembali" name="kembali" class="form-control" id="kembali" aria-describedby="kembali" readonly></th>
         </tr>
     </table>    
 

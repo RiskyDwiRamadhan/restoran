@@ -36,7 +36,7 @@ Admin-Menu
                             <h3><i class="far fa-file-alt"></i> Menu</h3>
                         </div>
                         
-                        <div class="card-header" style="width:310px">
+                        {{-- <div class="card-header" style="width:310px">
                         <form action="/menu/cari/" method="GET">
                             <div class="input-group">
                                 <input type="text" name="keyword" class="form-control" placeholder="Cari Menu....">
@@ -45,7 +45,7 @@ Admin-Menu
                                 </button>
                             </div>
                         </form>
-                        </div>
+                        </div> --}}
                         <!-- end card-header -->
 
                             <div class="card-body">

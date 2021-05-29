@@ -35,6 +35,11 @@
       @include('layouts.navigation')        
       @include('layouts.sidebar')
 	  @yield('content')	
+      <footer class="footer">
+          <span class="text-right">                
+              Copyright <a target="_blank" href="#">Restoran HOMY</a>
+          </span>
+      </footer>
       {{-- @include('layouts.footer') --}}
         <script src="Nura Admin/assets/js/modernizr.min.js"></script>
         <script src="Nura Admin/assets/js/jquery.min.js"></script>

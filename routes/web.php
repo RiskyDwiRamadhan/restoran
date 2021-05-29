@@ -52,6 +52,7 @@ Route::middleware(['auth'])->group(function () {
  
     Route::middleware(['admin'])->group(function () {
         Route::get('/admin', [HomeController::class, 'admin'])->name('home.admin');
+        Route::get('/Atransaksi', [HomeController::class, 'transaksi'])->name('home.transaksi');
         Route::resource('booking', MejaController::class);
         Route::resource('menu', MenuController::class);
         Route::resource('favorite', FavoriteController::class);
