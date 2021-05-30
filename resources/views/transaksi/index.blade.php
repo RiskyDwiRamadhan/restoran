@@ -30,7 +30,7 @@
         </tr>
         @foreach ($order as $ORDER)
         <tr>
-            <td>{{ $ORDER->meja->no_meja }}</td>
+            <td>{{ $ORDER->id_meja }}</td>
             <td>{{ $ORDER->harga_total }}</td>
             <td>{{ $ORDER->tgl_order}}</td>
             <td>{{ $ORDER->status }}</td>

@@ -77,4 +77,15 @@
         {{ $detailorder->links() }}
     </div>
 </form>
+<script>
+    jQuery(function ($) { 
+        $("#bayar").on('change', function() {
+            let bayar = $(this).val();
+            let total = $('#total').val();
+            let kembalian = bayar - total;
+
+            $("#kembali").val(kembalian);
+        });
+    });
+</script>
 @endsection 
