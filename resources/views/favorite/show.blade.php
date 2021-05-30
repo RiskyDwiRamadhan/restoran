@@ -11,7 +11,7 @@
                 </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><img width="200px" height="200px" src="{{$favorite->menu->image}}"></li>
+                    <li class="list-group-item"><img width="200px" height="200px" src="{{asset('storage/' . $favorite->menu->image)}}"></li>
                     <li class="list-group-item"><b>Nama Menu: </b>{{$favorite->menu->nama_menu}}</li>
                     <li class="list-group-item"><b>Harga Menu: </b>{{$favorite->menu->harga_menu}}</li>
                     {{-- <li class="list-group-item"><b>Harga Menu: </b>{{$favorite->id_favorite}}</li> --}}

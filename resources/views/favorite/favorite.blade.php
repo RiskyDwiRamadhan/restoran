@@ -54,7 +54,7 @@
 
                                                 <tr>
                                                     <td>
-                                                        <div class="blog_list"><img class="img-fluid d-none d-lg-block" alt="image" src="{{ $f->menu->image }}" /></div>
+                                                        <div class="blog_list"><img class="img-fluid d-none d-lg-block" alt="image" src="{{ asset('storage/' . $f->menu->image) }}" /></div>
                                                         <h4> {{ $f->menu->nama_menu }}</h4>
                                                         <p>{{ $f->menu->harga_menu }}</p>
                                                         <p>{{ $f->menu->deskripsi }}</p>

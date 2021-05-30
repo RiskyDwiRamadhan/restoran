@@ -65,7 +65,7 @@ Admin-Menu
                                             <tr>
                                                 <td>
                                                     {{-- {{ asset('storage/' . $item->image) }} --}}
-                                                    <div class="blog_list"><img class="img-fluid d-none d-lg-block" alt="image" src="{{ $item->image }}" /></div>
+                                                    <div class="blog_list"><img class="img-fluid d-none d-lg-block" alt="image" src="{{ asset('storage/' . $item->image) }}" /></div>
                                                     <h4> {{ $item->nama_menu }}</h4>
                                                     <p>{{ $item->harga_menu }}</p>
                                                     <p>{{ $item->deskripsi }}</p>
