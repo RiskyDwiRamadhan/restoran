@@ -46,7 +46,7 @@
 
 @extends('layouts.admin')
 @section('title')
-Admin-Transaksi
+Admin-User
 @endsection
 @section('content')
 <div class="content-page">
@@ -60,10 +60,10 @@ Admin-Transaksi
             <div class="row">
                 <div class="col-xl-12">
                     <div class="breadcrumb-holder">
-                        <h1 class="main-title float-left">Transaksi</h1>
+                        <h1 class="main-title float-left">User</h1>
                         <ol class="breadcrumb float-right">
                             <li class="breadcrumb-item">Home</li>
-                            <li class="breadcrumb-item active">Transaksi</li>
+                            <li class="breadcrumb-item active">User</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -78,8 +78,8 @@ Admin-Transaksi
                     <div class="card mb-3">
 
                         <div class="card-header">
-                            {{-- <span class="pull-right"><a href="{{ route('menu.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus" aria-hidden="true"></i> Add menu</a></span> --}}
-                            <h3><i class="far fa-file-alt"></i> Transaksi</h3>
+                            <span class="pull-right"><a href="{{ route('userdata.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus" aria-hidden="true"></i> Add User</a></span>
+                            <h3><i class="far fa-file-alt"></i> User</h3>
                         </div>
 
                             <div class="card-body">
