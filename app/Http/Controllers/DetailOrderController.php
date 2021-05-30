@@ -124,6 +124,10 @@ class DetailOrderController extends Controller
     public function save(Request $request){
         $sementara = OrderSementara::All();
         $idorder ='O'.date('ymd').rand(01,999);
+        
+        $meja = Meja::where('id_meja', 'like', "%".$request->get('no_meja')."%")->first();
+        $meja->status_meja = 'terisi';
+        $meja->update();
 
         $order = new Order;
         $order->id_order = $idorder;
@@ -132,10 +136,6 @@ class DetailOrderController extends Controller
         $order->tgl_order = now();
         $order->status = 'belum';
         $order->save();
-
-        $meja = Meja::find($request->get('no_meja'));
-        $meja->status_meja = 'terisi';
-        $meja->update();
 
         foreach ($sementara as $key => $value) {
             $menu = Menu::where('id_menu', 'like', "%".$value->id_menu."%")->first();
@@ -148,6 +148,7 @@ class DetailOrderController extends Controller
             );
             DetailOrder::insert($order);
             OrderSementara::where('id_sorder', 'like', "%".$value->id_dorder."%")->first()->delete();
+
         }       
         // OrderSementara::All()->delete();
         return redirect()->route('home.menu');

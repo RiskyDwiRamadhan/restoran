@@ -19,10 +19,6 @@
     <form method="post" action="{{ route('detailorder.save') }}" id="myForm" enctype="multipart/form-data">
         @csrf
         @method('GET')
-        <div class="float-right my-2">
-            <button type="submit" class="btn btn-primary">Submit</button>                   
-            <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
-        </div>
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -31,6 +27,10 @@
     @endif
 
     <table class="table table-bordered">
+        <div class="float-right my-2">
+            <button type="submit" class="btn btn-primary">Submit</button>                   
+            <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
+        </div>
         <tr>
             <th>Nama Menu</th>
             <th>Harga Menu</th>

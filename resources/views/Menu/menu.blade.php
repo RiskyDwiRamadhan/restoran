@@ -97,7 +97,7 @@
                 </div>
             </div>
     </section>
-
+{{-- 
     <section class="u-align-center u-clearfix u-white-10 u-section-3" id="carousel_c1c7">
         <div class="u-clearfix u-sheet u-sheet-1">
             <h1 class="u-custom-font u-font-oswald u-text u-text-palette-3-base u-text-1">Menu Cemilan</h1>
@@ -112,7 +112,7 @@
                         <div
                             class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
                             <img alt="" class="u-expanded-width-xs u-image u-image-default u-image-1"
-                            {{-- {{ asset('storage/' . $M->image) }} --}}
+                            {{-- {{ asset('storage/' . $M->image) }} 
                                 src="{{ $C->image }}" data-image-width="1000" data-image-height="1500">
                             <div
                                 class="u-align-left-xs u-container-style u-expanded-width-xs u-group u-video-cover u-group-1">
@@ -133,7 +133,7 @@
                     {{ $cemilan->links() }}
                 </div>
             </div>
-      </section>
+      </section> --}}
 
     <section class="u-align-center u-clearfix u-grey-10 u-section-5" id="sec-dbe5">
         <div class="u-clearfix u-sheet u-sheet-1">
@@ -171,4 +171,5 @@
 
             </div>
         </div>
+    </section>
 @endsection
