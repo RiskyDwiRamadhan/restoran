@@ -10,7 +10,7 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><img width="100" height="100" src="{{ asset('storage/images' . $menu->image) }}"></li>
+                        <li class="list-group-item"><img width="100" height="100" src="{{ asset('storage/' . $menu->image) }}"></li>
                         <li class="list-group-item"><b>ID: </b>{{ $menu->id_menu }}</li>
                         <li class="list-group-item"><b>Nama Menu: </b>{{ $menu->nama_menu }}</li>
                         <li class="list-group-item"><b>Harga Menu: </b>{{ $menu->harga_menu }}</li>

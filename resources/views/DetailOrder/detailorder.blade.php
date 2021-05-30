@@ -1,5 +1,8 @@
 @extends('layouts.master')
 
+@section('title')
+    Halaman Menu
+@endsection
 @section('content')
 <div class="container mt-5" enctype="multipart/form-data">
     <div class="row justify-content-center align-items-center">
@@ -7,7 +10,7 @@
             <div class="card-header">
                 Detail Order
             </div>
-        <div class="card-body">
+            <div class="card-body">
                     <form action="{{ route('detailorder.sementara', $menu->id_menu) }}" method="get" class="tm-contact-form">
                         @csrf
                         <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
@@ -30,8 +33,8 @@
                         </div>
                     </form>
             </div>
-        <a class="btn btn-success mt3" href="{{ url('/hmenu') }}">Kembali</a>
+        <a class="btn btn-success mt3" href="{{ url('/menus') }}">Kembali</a>
         </div>
     </div>
-</form>
+</div>
 @endsection

@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('title')
+    Halaman Transaksi
+@endsection
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -27,7 +30,7 @@
         </tr>
         @foreach ($order as $ORDER)
         <tr>
-            <td>{{ $ORDER->meja->no_meja }}</td>
+            <td>{{ $ORDER->id_meja }}</td>
             <td>{{ $ORDER->harga_total }}</td>
             <td>{{ $ORDER->tgl_order}}</td>
             <td>{{ $ORDER->status }}</td>

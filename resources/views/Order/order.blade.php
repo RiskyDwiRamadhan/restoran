@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('title')
+    Halaman Keranjang
+@endsection
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -28,6 +31,10 @@
     @endif
 
     <table class="table table-bordered">
+        <div class="float-right my-2">
+            <button type="submit" class="btn btn-primary">Submit</button>                   
+            <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
+        </div>
         <tr>
             <th>Nama Menu</th>
             <th>Harga Menu</th>

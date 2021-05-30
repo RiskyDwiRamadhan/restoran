@@ -1,21 +1,8 @@
 @extends('layouts.master')
-{{-- 
-@section('template')
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("#bayar").keyup(function() {
-            var harga  = 3;
-            var bayar = $("#bayar").val();
-
-            var kembali = parseInt(harga) * parseInt(bayar);
-            $("#kembali").val(kembali);
-        });
-    });
-</script>
-@endsection --}}
-
+@section('title')
+    Halaman Transaksi
+@endsection
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -90,4 +77,15 @@
         {{ $detailorder->links() }}
     </div>
 </form>
+<script>
+    jQuery(function ($) { 
+        $("#bayar").on('change', function() {
+            let bayar = $(this).val();
+            let total = $('#total').val();
+            let kembalian = bayar - total;
+
+            $("#kembali").val(kembalian);
+        });
+    });
+</script>
 @endsection 

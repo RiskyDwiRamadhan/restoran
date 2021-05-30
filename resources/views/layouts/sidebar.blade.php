@@ -9,7 +9,7 @@
                     <ul>
 
                         <li class="submenu">
-                            <a href="#">
+                            <a href="{{ route('userdata.index') }}">
                                 <i class="fas fa-user"></i>
                                 <span> Users </span>
                             </a>
