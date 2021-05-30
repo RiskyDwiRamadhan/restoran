@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\DetaiOrder;
 use App\Models\Meja;
+use App\Models\Transaksi;
 
 class Order extends Model
 {
@@ -13,6 +14,7 @@ class Order extends Model
     protected $table="order"; 
     public $timestamps= false;
     protected $primaryKey = 'id_order';
+    protected $keyType = "string";
 
     
    protected $fillable = [
@@ -30,5 +32,10 @@ class Order extends Model
    public function dorder()
    {
        return $this->hashMany(DetailOrder::class, 'id_dorder');
+   }
+
+   public function transaksi()
+   {
+       return $this->hashMany(Transaksi::class, 'id_dorder');
    }
 }

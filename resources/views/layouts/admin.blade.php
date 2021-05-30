@@ -1,14 +1,106 @@
-<html>
-    <head>
-        <title>Sistem Informasi RESTORAN</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="container">
-          @yield('content')
-        </div> 
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        @yield('title')	
+    </title>
+    <meta name="description" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your website">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Nura Admin/assets/images/favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link href="Nura Admin/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome CSS -->
+    <link href="Nura Admin/assets/font-awesome/css/all.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom CSS -->
+    <link href="Nura Admin/assets/css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- BEGIN CSS for this page -->
+    <link rel="stylesheet" type="text/css" href="Nura Admin/assets/plugins/chart.js/Chart.min.css" />
+    <link rel="stylesheet" type="text/css" href="Nura Admin/assets/plugins/datatables/datatables.min.css" />
+    <!-- END CSS for this page -->
+</head>
+
+<body class="adminbody">
+
+    <div id="main">
+
+      @include('layouts.navigation')        
+      @include('layouts.sidebar')
+	  @yield('content')	
+      <footer class="footer">
+          <span class="text-right">                
+              Copyright <a target="_blank" href="#">Restoran HOMY</a>
+          </span>
+      </footer>
+      {{-- @include('layouts.footer') --}}
+        <script src="Nura Admin/assets/js/modernizr.min.js"></script>
+        <script src="Nura Admin/assets/js/jquery.min.js"></script>
+        <script src="Nura Admin/assets/js/moment.min.js"></script>
+
+        <script src="Nura Admin/assets/js/popper.min.js"></script>
+        <script src="Nura Admin/assets/js/bootstrap.min.js"></script>
+
+        <script src="Nura Admin/assets/js/detect.js"></script>
+        <script src="Nura Admin/assets/js/fastclick.js"></script>
+        <script src="Nura Admin/assets/js/jquery.blockUI.js"></script>
+        <script src="Nura Admin/assets/js/jquery.nicescroll.js"></script>
+
+        <!-- App js -->
+        <script src="Nura Admin/assets/js/admin.js"></script>
+
+    </div>
+    <!-- END main -->
+    <!-- BEGIN Java Script for this page -->
+    <script src="Nura Admin/assets/plugins/chart.js/Chart.min.js"></script>
+    <script src="Nura Admin/assets/plugins/datatables/datatables.min.js"></script>
+
+
+    <!-- Counter-Up-->
+    <script src="Nura Admin/assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="Nura Admin/assets/plugins/counterup/jquery.counterup.min.js"></script>
+
+    <!-- dataTabled data -->
+    <script src="Nura Admin/assets/data/data_datatables.js"></script>
+
+    <!-- Charts data -->
+    <script src="Nura Admin/assets/data/data_charts_dashboard.js"></script>
+    <script>
+        $(document).on('ready', function() {
+            // data-tables
+            $('#dataTable').DataTable({
+                data: dataSet,
+                columns: [{
+                    title: "Name"
+                }, {
+                    title: "Position"
+                }, {
+                    title: "Office"
+                }, {
+                    title: "Extn."
+                }, {
+                    title: "Date"
+                }, {
+                    title: "Salary"
+                }]
+            });
+
+            // counter-up
+            $('.counter').counterUp({
+                delay: 10,
+                time: 600
+            });
+        });
+    </script>
+    <!-- END Java Script for this page -->
+
+</body>
+
 </html>

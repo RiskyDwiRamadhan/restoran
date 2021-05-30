@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Halaman Home
+    Halaman Meja
 @endsection
 @section('template')
   <link rel="stylesheet" href="\template\Meja.css" media="screen"> 
@@ -27,53 +27,11 @@
         @foreach ($meja as $M)
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-1">
-                <img src="{{$M->image}}" alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="1000" data-image-height="1000">
+                <img src="{{ asset('storage/' . $M->image) }}" alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="1000" data-image-height="1000">
                 <p class="u-text u-text-grey-40 u-text-3">Berkapasitas {{$M->kapasitas}} orang</p>
-                <a href="https://nicepage.com/k/blank-html-templates" class="u-align-center u-border-1 u-border-palette-1-light-1 u-btn u-btn-round u-button-style u-palette-1-light-3 u-radius-3 u-text-palette-1-dark-2 u-btn-1">Booking</a>
             </div>
             </div>
         @endforeach
-
-            {{-- <div class="u-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-2">
-                <img src="template/images/DarioTrapasso-36DaysofType1.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-2" data-image-width="1000" data-image-height="1000">
-                <p class="u-text u-text-grey-40 u-text-4">Berkapasitas 2 orang</p>
-                <a href="https://nicepage.com/k/blank-html-templates" class="u-align-center u-border-1 u-border-palette-1-light-1 u-btn u-btn-round u-button-style u-palette-1-light-3 u-radius-3 u-text-palette-1-dark-2 u-btn-2">Booking<br>
-                </a>
-            </div>
-            </div>
-            <div class="u-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-3">
-                <img src="template/images/36DaysofType1.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-3" data-image-width="1000" data-image-height="1000">
-                <p class="u-text u-text-grey-40 u-text-5">Berkapasitas 4 orang</p>
-                <a href="https://nicepage.com/k/blank-html-templates" class="u-align-center u-border-1 u-border-palette-1-light-1 u-btn u-btn-round u-button-style u-palette-1-light-3 u-radius-3 u-text-palette-1-dark-2 u-btn-3">Booking<br>
-                </a>
-            </div>
-            </div>
-            <div class="u-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-4">
-                <img src="template/images/DarioTrapasso-36DaysofType.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-4" data-image-width="1000" data-image-height="1000">
-                <p class="u-text u-text-grey-40 u-text-6">Berkapasitas 4 orang</p>
-                <a href="https://nicepage.com/k/blank-html-templates" class="u-align-center u-border-1 u-border-palette-1-light-1 u-btn u-btn-round u-button-style u-palette-1-light-3 u-radius-3 u-text-palette-1-dark-2 u-btn-4">Booking<br>
-                </a>
-            </div>
-            </div>
-            <div class="u-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-5">
-                <img src="template/images/36DaysofType.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-5" data-image-width="1000" data-image-height="1000">
-                <p class="u-text u-text-grey-40 u-text-7">Berkapasitas 2 orang</p>
-                <a href="https://nicepage.com/k/blank-html-templates" class="u-align-center u-border-1 u-border-palette-1-light-1 u-btn u-btn-round u-button-style u-palette-1-light-3 u-radius-3 u-text-palette-1-dark-2 u-btn-5">Booking<br>
-                </a>
-            </div>
-            </div>
-            <div class="u-align-center u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-6">
-                <img src="template/images/DarioTrapasso-36DaysofType.png" alt="" class="u-expanded-width u-image u-image-default u-image-6" data-image-width="1000" data-image-height="1000">
-                <p class="u-text u-text-grey-40 u-text-8">Berkapasitas 6 orang</p>
-                <a href="https://nicepage.com/k/blank-html-templates" class="u-align-center u-border-1 u-border-palette-1-light-1 u-btn u-btn-round u-button-style u-palette-1-light-3 u-radius-3 u-text-palette-1-dark-2 u-btn-6">Booking </a>
-            </div>
-            </div>
-             --}}
         </div>
         </div>
     </section>

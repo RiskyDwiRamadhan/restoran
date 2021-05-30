@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.master')
 
 @section('content')
 <div class="container mt-5" enctype="multipart/form-data">
@@ -30,7 +30,7 @@
                         </div>
                     </form>
             </div>
-        <a class="btn btn-success mt3" href="{{ url('/menu') }}">Kembali</a>
+        <a class="btn btn-success mt3" href="{{ url('/hmenu') }}">Kembali</a>
         </div>
     </div>
 </form>

@@ -17,19 +17,32 @@
       <div class="u-custom-menu u-nav-container">
         <ul class="u-nav u-unstyled u-nav-1">
             <li class="u-nav-item">
-                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url('/')}}" style="padding: 10px 20px;">Home</a>
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{route('home.home')}}" style="padding: 10px 20px;">Home</a>
             </li>
             <li class="u-nav-item">
-                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url('/menu')}}" style="padding: 10px 20px;">Menu</a>
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{ route('home.menu') }}" style="padding: 10px 20px;">Menu</a>
             </li>
             <li class="u-nav-item">
-                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url('/meja')}}" style="padding: 10px 20px;">Meja</a>
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{route('home.meja')}}" style="padding: 10px 20px;">Meja</a>
             </li>
             <li class="u-nav-item">
-                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Transaksi.html" style="padding: 10px 20px;">Transaksi</a>
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{route('detailorder.index')}}" style="padding: 10px 20px;">Keranjang</a>
             </li>
             <li class="u-nav-item">
-                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Profile.html" style="padding: 10px 20px;">Profile</a>
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{route('transaksi.index')}}" style="padding: 10px 20px;">Transaksi</a>
+            </li>
+            <li class="u-nav-item">
+                {{-- <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Profile.html" style="padding: 10px 20px;">Profile</a> --}}
+                
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                 {{ __('Logout') }}
+             </a>
+
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                 @csrf
+             </form>
             </li>
         </ul>
       </div>

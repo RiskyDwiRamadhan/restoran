@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DetailOrder;
 use App\Models\Order;
+use App\Models\Meja;
 use App\Models\Menu;
 use App\Models\OrderSementara;
 use Illuminate\Http\Request;
@@ -18,14 +19,9 @@ class DetailOrderController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('search')){ // Pemilihan jika ingin melakukan pencarian nama
-            // $detailorder = OrderSementara::where('nama', 'like', "%".$request->search."%")->with('kelas')->paginate(5);
-        } else { // Pemilihan jika tidak melakukan pencarian nama
-            //fungsi eloquent menampilkan data menggunakan pagination
-            $detailorder = OrderSementara::paginate(5); // Pagination menampilkan 5 data
-        }
-
-        return view('Order.order', compact('detailorder'));
+        $detailorder = OrderSementara::paginate(5);
+        $meja = Meja::where('status_meja', 'like', "%".'kosong'."%")->get();
+        return view('Order.order', compact('detailorder', 'meja'));
     }
 
     /**
@@ -46,31 +42,6 @@ class DetailOrderController extends Controller
      */
     public function store(Request $request)
     {        
-        // $request->validate([
-        //     'qty' => 'required'
-        // ]);
-        
-
-        // $menu = Menu::where('id_menu', 'like', "%".$request->id_menu."%")->first();
-
-        // $idorder ='O'.date('ymd').rand(01,999);
-        // Order::create([
-        //     'id_order' => $idorder,
-        //     'id_meja' => '01',
-        //     'harga_total' => 30000,
-        //     'tgl_order' => now()
-        // ]);
-
-        // DetailOrder::create([
-        //     'id_dorder' => 'DO'.date('ymd').rand(01,999),
-        //     'id_order'=> $idorder,
-        //     'id_menu' => $menu->id_menu,
-        //     'qty' => $request->get('qty'),
-        //     'harga' =>$menu->harga_menu*$request->get('qty'),
-
-        // ]);
-
-        // return redirect()->route('/menu');
     }
 
     /**
@@ -114,7 +85,7 @@ class DetailOrderController extends Controller
         $sorder->id_sorder = $id;
         $sorder->id_menu = $sorder->id_menu;
         $sorder->qty = $request->get('qty');
-        $sorder->harga = $sorder->menu->harga*$request->get('qty');
+        $sorder->harga = $sorder->menu->harga_menu*$request->get('qty');
         
         $sorder->update();
 
@@ -150,15 +121,21 @@ class DetailOrderController extends Controller
         return redirect()->route('home.menu');
     }
 
-    public function save(){
+    public function save(Request $request){
         $sementara = OrderSementara::All();
         $idorder ='O'.date('ymd').rand(01,999);
-        Order::create([
-            'id_order' => $idorder,
-            'id_meja' => '01',
-            'harga_total' => $sementara->sum('harga'),
-            'tgl_order' => now()
-        ]);
+
+        $order = new Order;
+        $order->id_order = $idorder;
+        $order->id_meja = $request->get('no_meja');
+        $order->harga_total = $sementara->sum('harga');
+        $order->tgl_order = now();
+        $order->status = 'belum';
+        $order->save();
+
+        $meja = Meja::find($request->get('no_meja'));
+        $meja->status_meja = 'terisi';
+        $meja->update();
 
         foreach ($sementara as $key => $value) {
             $menu = Menu::where('id_menu', 'like', "%".$value->id_menu."%")->first();
