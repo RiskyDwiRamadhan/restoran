@@ -4,9 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
-class KasirMiddleware
+class CustomerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,12 +17,9 @@ class KasirMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->role != "kasir"){
-            /* 
-            silahkan modifikasi pada bagian ini
-            apa yang ingin kamu lakukan jika rolenya tidak sesuai
-            */
-            return redirect()->to('/home/customer');
+        if(Auth::user()->role != "customer"){
+
+            return redirect()->to('logout');
         }
         return $next($request);
     }

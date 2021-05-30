@@ -59,17 +59,18 @@ Route::middleware(['auth'])->group(function () {
     });
     
     Route::middleware(['customer'])->group(function () {
-        Route::get('/home', [HomeController::class, 'home'])->name('home.home');
-    });
- 
-    Route::middleware(['kasir'])->group(function () {
-        Route::get('/home', [HomeController::class, 'home'])->name('home.home');
+        Route::get('/home/customer', [HomeController::class, 'home'])->name('home.homeCustomer');
         Route::get('/menus', [HomeController::class, 'menu'])->name('home.menu');
         Route::get('/meja', [HomeController::class, 'meja'])->name('home.meja');
 
         Route::resource('detailorder', DetailOrderController::class);
         Route::get('/sementara/{id}', [DetailOrderController::class, 'simpanSementara'])->name('detailorder.sementara');
         Route::get('/save', [DetailOrderController::class, 'save'])->name('detailorder.save');
+        Route::get('/dorder', [HomeController::class, 'detailorder']);
+    });
+ 
+    Route::middleware(['kasir'])->group(function () {
+        Route::get('/home', [HomeController::class, 'home'])->name('home.home');
         
         Route::resource('transaksi', TransaksiController::class);
         Route::get('/bayar/{id}', [TransaksiController::class, 'transaksi'])->name('transaksi.bayar');

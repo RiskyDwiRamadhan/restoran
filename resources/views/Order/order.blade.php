@@ -18,7 +18,7 @@
         @method('GET')
         <div class="float-right my-2">
             <button type="submit" class="btn btn-primary">Submit</button>                   
-            <a class="btn btn-success" href="{{ route('home.menu') }}"> Input Detail Order</a>
+            <a class="btn btn-success" href="{{ route('home.menu') }}"> Tambah Menu</a>
         </div>
 
     @if ($message = Session::get('success'))
@@ -69,7 +69,7 @@
     <div class="container mt-1 " style="width: 24rem;"> 
         <div class="form-group">
             <label for="no_meja">NO Meja</label>
-            <select name="no_meja" id="no_meja" class="form-control">
+            <select name="no_meja" id="no_meja" class="form-control" required>
                 <option value="">--Pilih Meja--</option>
                 @foreach ($meja as $MEJA)
                     <option value="{{$MEJA->id_meja}}">{{$MEJA->no_meja}}</option>

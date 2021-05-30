@@ -15,37 +15,37 @@ class MejaRestoranSeeder extends Seeder
     public function run()
     {
         $data=[[
-                'id_meja' =>'01',
+                'id_meja' =>'1',
                 'no_meja' => '1',
                 'kapasitas' => '6',
                 'status_meja' => 'kosong',
                 'image' => '/template/images/1.png'
             ],[
-                'id_meja' =>'02',
+                'id_meja' =>'2',
                 'no_meja' => '2',
                 'kapasitas' => '6',
                 'status_meja' => 'kosong',
                 'image' => '/template/images/2.jpg'
             ],[
-                'id_meja' =>'03',
+                'id_meja' =>'3',
                 'no_meja' => '3',
                 'kapasitas' => '4',
                 'status_meja' => 'kosong',
                 'image' => '/template/images/3.jpg'
             ],[
-                'id_meja' =>'04',
+                'id_meja' =>'4',
                 'no_meja' => '4',
                 'kapasitas' => '4',
                 'status_meja' => 'kosong',
                 'image' => '/template/images/4.jpg'
             ],[
-                'id_meja' =>'05',
+                'id_meja' =>'5',
                 'no_meja' => '5',
                 'kapasitas' => '5',
                 'status_meja' => 'kosong',
                 'image' => '/template/images/5.jpg'
             ],[
-                'id_meja' =>'06',
+                'id_meja' =>'6',
                 'no_meja' => '6',
                 'kapasitas' => '5',
                 'status_meja' => 'kosong',
