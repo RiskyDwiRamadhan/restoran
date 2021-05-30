@@ -39,7 +39,8 @@
                             <input type="status_meja" name="status_meja" class="form-control" id="status_meja" aria-describedby="status_meja">
                         </div>
                         <div>
-                            <label for="image">gambar: </label> <input type="file" class="form-control" required="required" name="image"></br>
+                            <label for="image">gambar: </label> 
+                            <input type="file" class="form-control" required="required" name="image"></br>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
