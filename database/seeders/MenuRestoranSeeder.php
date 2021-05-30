@@ -16,40 +16,61 @@ class MenuRestoranSeeder extends Seeder
     {
         $data=[[
             'id_menu' => '1',
-            'nama_menu' =>'Sate Lilit',
-            'harga_menu' => '15000',
+            'nama_menu' =>'Nasi Bakar Ayam',
+            'harga_menu' => '16000',
             'jenis_menu' => 'makanan',
-            'deskripsi' => 'Sate lilit adalah sate khas Bali yang terbuat dari ayam, udang, dan dicampurkan dengan bumbu yang kaya rempah-rempah. Serta menggunakan sereh untuk tusuk satenya.',
-            'image' => '/template/images/sate lilit.jpg'
+            'deskripsi' => 'Nasi bakar dengan campuran potongan ayam yang dibungkus dengan daun pisang',
+            'image' => ''
         ],[
             'id_menu' => '2',
-            'nama_menu' =>'Sate Tempe',
-            'harga_menu' => '15000',
+            'nama_menu' =>'Nasi Bakar Tongkol',
+            'harga_menu' => '16000',
             'jenis_menu' => 'makanan',
-            'deskripsi' => 'Sate tempe merupakan makanan berbahan dasar tempe yang terbuat dari kedelai fermentasi. Diolah seperti pembuatan sate.',
-            'image' => '/template/images/sate tempe.jpg'
+            'deskripsi' => 'Nasi bakar dengan campuran potongan ikan tongkol yang dibungkus dengan daun pisang',
+            'image' => ''
         ],[
             'id_menu' => '3',
-            'nama_menu' =>'Es Kelapa Muda',
-            'harga_menu' => '10000',
-            'jenis_menu' => 'minuman',
-            'deskripsi' => 'Es kelapa muda adalah minuman yang menyegarkan, terbuat dari air kelapa muda dan diberikan topping daging buah kelapa yang lembut.',
-            'image' => '/template/images/es degan.png'
+            'nama_menu' =>'Nasi Bakar Cumi',
+            'harga_menu' => '18000',
+            'jenis_menu' => 'makanan',
+            'deskripsi' => 'Nasi bakar dengan campuran potongan cumi-cumi yang dibungkus dengan daun pisang',
+            'image' => ''
         ],[
             'id_menu' => '4',
-            'nama_menu' =>'Es Teh',
-            'harga_menu' => '5000',
-            'jenis_menu' => 'minuman',
-            'deskripsi' => 'es teh segar',
-            'image' => '/template/images/teh.jpg'
+            'nama_menu' =>'Ayam Kremes',
+            'harga_menu' => '17000',
+            'jenis_menu' => 'makanan',
+            'deskripsi' => 'Ayam goreng yang digoreng dengan tepung dan dilumuri sambal diatasnya',
+            'image' => ''
         ],[
             'id_menu' => '5',
             'nama_menu' =>'Es Jeruk',
-            'harga_menu' => '5000',
+            'harga_menu' => '8000',
             'jenis_menu' => 'minuman',
             'deskripsi' => 'es jeruk segar',
-            'image' => '/template/images/es jeruk.jpg'
-        ]    
+            'image' => ''
+        ],[
+            'id_menu' => '7',
+            'nama_menu' =>'Es Teh',
+            'harga_menu' => '8000',
+            'jenis_menu' => 'minuman',
+            'deskripsi' => 'es teh segar',
+            'image' => ''
+        ],[
+            'id_menu' => '6',
+            'nama_menu' =>'Es Homy',
+            'harga_menu' => '10000',
+            'jenis_menu' => 'minuman',
+            'deskripsi' => '',
+            'image' => ''
+        ],[
+            'id_menu' => '8',
+            'nama_menu' =>'Es Coklat',
+            'harga_menu' => '8000',
+            'jenis_menu' => 'minuman',
+            'deskripsi' => '',
+            'image' => ''
+        ]           
     ];
     DB::table('menu')->insert($data);
     }

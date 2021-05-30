@@ -48,8 +48,8 @@
                   <div class="u-container-layout u-container-layout-4">
                     <h6 class="u-align-center u-text u-text-4">Favorite<br>Food
                     </h6>
-                    <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-5">{{$data[4]->menu->nama_menu}}</h3>
-                    <p class="u-align-center u-text u-text-6">{{$data[4]->menu->deskripsi}}</p>
+                    <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-5">{{$data[0]->menu->nama_menu}}</h3>
+                    <p class="u-align-center u-text u-text-6">{{$data[0]->menu->deskripsi}}</p>
                   </div>
                 </div>
                 <div class="u-container-style u-image u-layout-cell u-size-20 u-image-3" data-image-width="280" data-image-height="229">
@@ -58,8 +58,8 @@
                 <div class="u-container-style u-layout-cell u-right-cell u-size-20 u-layout-cell-6">
                   <div class="u-container-layout u-container-layout-6">
                     <h6 class="u-align-center u-text u-text-7">Favorite food</h6>
-                    <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-8">{{$data[0]->menu->nama_menu}}</h3>
-                    <p class="u-align-center u-text u-text-9">{{$data[0]->menu->deskripsi}}</p>
+                    <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-8">{{$data[1]->menu->nama_menu}}</h3>
+                    <p class="u-align-center u-text u-text-9">{{$data[1]->menu->deskripsi}}</p>
                   </div>
                 </div>
               </div>

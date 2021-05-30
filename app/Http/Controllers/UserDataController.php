@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserData;
+use App\Models\User;
 
 class UserDataController extends Controller
 {
@@ -69,7 +70,7 @@ class UserDataController extends Controller
      */
     public function edit($id_user)
     {
-        $userdata = UserData::where('id',$id_user)->first();
+        $userdata = User::where('id',$id_user);
         return view('userdata.edit', compact('userdata'));
     }
 

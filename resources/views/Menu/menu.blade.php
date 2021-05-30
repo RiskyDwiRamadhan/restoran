@@ -100,7 +100,7 @@
     <section class="u-align-center u-clearfix u-grey-10 u-section-5" id="sec-dbe5">
         <div class="u-clearfix u-sheet u-sheet-1">
             <h1 class="u-custom-font u-font-oswald u-text u-text-palette-3-base u-text-1">Menu Minuman</h1>
-            <p class="u-text u-text-2">Menu makanan yang tersedia adalah makanan-makanan khas nusantara dengan bahan makanan
+            <p class="u-text u-text-2">Menu minuman yang tersedia adalah minuman-minuman khas nusantara dengan bahan minuman
                 pilihan asli nusantara</p>
             <div class="u-expanded-width-xs u-list u-repeater u-list-1">
 

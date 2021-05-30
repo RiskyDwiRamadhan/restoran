@@ -102,7 +102,7 @@ class MenuController extends Controller
             'image'=>'required',
         ]);
 
-        $menu = Menu::find($id_menu)->first();
+        $menu = Menu::where('id_menu', $id_menu)->first();
         // return redirect()->route('menu.index')->with('success', 'Menu Berhasil Diupdate');
         
         
@@ -110,16 +110,15 @@ class MenuController extends Controller
             $image_name = $request->file('image')->store('images', 'public');
         }
         //  new Menu;
-        $menu->id_menu = $request->get('id_menu');
         $menu->nama_menu = $request->get('nama_menu');
         $menu->harga_menu = $request->get('harga_menu');
         $menu->jenis_menu = $request->get('jenis_menu');
         $menu->deskripsi = $request->get('deskripsi');
         $menu->image = $image_name;
-        $menu->save();
+        $menu->update();
 
         return redirect()->route('menu.index')
-            ->with('success', 'Menu Berhasil Ditambahkan');
+            ->with('success', 'Menu Berhasil Diupdate');
     }
 
     /**
